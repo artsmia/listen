@@ -6,14 +6,13 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body ng-controller="ListenCtrl">
-  <div ng-if="! readyToPlay">
+  <div ng-if="! buffers">
     Loading...
   </div>
 
-  <div ng-if="readyToPlay">
+  <div ng-if="buffers">
     <button ng-click="audioSources.play()">Play</button>        
-  
-    <div ng-repeat="source in audioSources.sources">
+    <div ng-repeat="buffer in buffers">
       <input type="range" min="-100" max="100" value="0" style="width: 100%" ng-model="gain" ng-change="audioSources.setGain($index, gain / 100)">
     </div>
   </div>
@@ -22,10 +21,7 @@
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-route.js"></script>
   <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/providers.js"></script>
+  <script src="js/factories.js"></script>
   <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
 </body>
 </html>
