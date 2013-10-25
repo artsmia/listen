@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.controllers', []).
-  controller('ListenCtrl', ['$scope', '$q', '$rootScope', 'AudioSources', '$timeout', function($scope, $q, $rootScope, AudioSources, $timeout) {
+  controller('ListenCtrl', ['$scope', '$q', '$timeout', 'AudioSources', '$timeout', function($scope, $q, $timeout, AudioSources) {
  		$scope.audioSources = AudioSources;
 
 		$scope.audioSources.load(
@@ -19,14 +19,7 @@ angular.module('myApp.controllers', []).
 				'audio/01_Jade_Mountain/JadeMtn_Words.mp3',
 			]							
 		).then(function(x) { $scope.buffers = x });
-		
-    $scope.onTimeout = function(){
-			$scope.t = $scope.audioSources.time();
-	    mytimeout = $timeout($scope.onTimeout,100);
-    }
-    var mytimeout = $timeout($scope.onTimeout,100);
-		
-		
+				
 		
 		// this .then thing above is not idiomatic; something an array of audio 
 		// buffers messes up directly binding to the view

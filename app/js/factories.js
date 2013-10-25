@@ -1,25 +1,15 @@
 var myApp = angular.module('myApp.factories', []);
 
-myApp.factory('AudioSources', function($q, $rootScope) {  	
+myApp.factory('AudioSources', function($q, $timeout) {  	
 	try {
 	  window.AudioContext = window.AudioContext||window.webkitAudioContext;
 		var context = new AudioContext();
 	} catch(e) {
     alert('Web Audio API is not supported in this browser');
-	}		
-	
-	var playing = false;
-	
-	var startTime = 0;
-	
-	var offsetTime = 0;
+	}			
 	
 	var buffers = new Array();
-
-	var sources = new Array();
 	
-	var gainNodes = new Array();		
-
 	var load = function(audioURLs) {
 		var deferred = $q.defer();
 				
@@ -42,6 +32,10 @@ myApp.factory('AudioSources', function($q, $rootScope) {
 			f(sources[i]);
 		}
 	}
+
+	var sources = new Array();	
+	var gainNodes = new Array();		
+	var playing = false;
 
 	var play = function() {		
 		// a source can only be played once, so create just before playing so can play a second time after a stop		
@@ -73,22 +67,33 @@ myApp.factory('AudioSources', function($q, $rootScope) {
 		playing = false;
 	}
 	
-	var setGain = function(track, value) {
+	var gain = function(track, value) {
 		gainNodes[track].gain.value = value;
 	}		
- 	
-	var time = function() {
+	
+	var startTime = 0;	
+	var offsetTime = 0;
+	var playTime = 0;	
+	
+	var setTime = function() {
 		if (playing) {
 			offsetTime = context.currentTime;
 		}	 
-		return offsetTime - startTime;
+		 playTime = offsetTime - startTime;
+		
+		$timeout(setTime, 100)
+	}
+	setTime();
+	
+	var time = function() {
+		return playTime;
 	}
 	
   return {
 		load: load,
 		play: play,
 		stop: stop, 
-		setGain: setGain,
-		time: time
+		gain: gain,
+		time: time,
   };
 })
