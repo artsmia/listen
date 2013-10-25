@@ -17,7 +17,13 @@ myApp.directive('playPause', function() {
 	}
 });
 
-myApp.directive('scrubber', function() {
+myApp.directive('rewind', function() {
 	return {
+		template: '<input type="button" value="◂" style="width:30px"></input>',
+		link: function(scope, button, attributes) {
+			button.bind("click", function() {
+				scope.audioSources.rewind();
+			});
+		}
 	}
 })

@@ -11,6 +11,7 @@
   </div>
 
   <div ng-if="buffers">
+    <input type="button" value="◂" style="width:30px" rewind></input>
     <input type="button" value="▸" style="width:30px" play-pause></input>
     
     <progress value="{{ audioSources.time() }}" max="{{ audioSources.duration() }}"></progress>

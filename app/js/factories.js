@@ -51,6 +51,8 @@ myApp.factory('AudioSources', function($q, $timeout) {
 			gainNodes[i].gain.value = 0;						
 			sources[i] = source;
 		}
+		
+		console.log("Playing at " + playTime);
 
 		onEachSource(function(source) {
 			source.start(0, playTime);
@@ -67,6 +69,17 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		});
 
 		playing = false;
+	}
+	
+	var rewind = function() {
+		playTime = 0;
+		offsetTime = 0;
+		startTime = 0;
+		console.log("Playtime: " + playTime);
+		if (playing) {
+			pause();
+			play();
+		}
 	}
 	
 	var setGain = function(track, value) {
@@ -99,6 +112,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		load: load,
 		play: play,
 		pause: pause, 
+		rewind: rewind,
 		setGain: setGain,
 		time: time,
 		duration: duration
