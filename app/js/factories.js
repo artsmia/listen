@@ -52,13 +52,11 @@ myApp.factory('AudioSources', function($q, $timeout) {
 			sources[i] = source;
 		}
 
-		console.log("Play from " + playTime);
-		
 		onEachSource(function(source) {
 			source.start(0, playTime);
 		});
 	
-		startTime = context.currentTime;		
+		startTime = context.currentTime - playTime;		
 		
 		playing = true;
 	}
