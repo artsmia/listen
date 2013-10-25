@@ -10,10 +10,12 @@
     Loading...
   </div>
 
-  <div ng-if="buffers">    
+  <div ng-if="buffers">
     <input type="button" value="Play" play-stop></input>
+    {{ t }}        
+    <div scrubber></div>
     <div ng-repeat="buffer in buffers">
-      <input type="range" min="-100" max="100" value="0" style="width: 100%" ng-model="gain" ng-change="audioSources.setGain($index, gain / 100)">
+      <input type="range" min="-100" max="100" value="0" style="width: 300px" ng-model="gain" ng-change="audioSources.setGain($index, gain / 100)">
     </div>
   </div>
     

@@ -7,7 +7,13 @@ myApp.factory('AudioSources', function($q, $rootScope) {
 	} catch(e) {
     alert('Web Audio API is not supported in this browser');
 	}		
-
+	
+	var playing = false;
+	
+	var startTime = 0;
+	
+	var offsetTime = 0;
+	
 	var buffers = new Array();
 
 	var sources = new Array();
@@ -53,22 +59,36 @@ myApp.factory('AudioSources', function($q, $rootScope) {
 		onEachSource(function(source) {
 			source.start(0);
 		});
+	
+		startTime = context.currentTime;		
+		
+		playing = true;
 	}
 		
 	var stop = function() {
 		onEachSource(function(source) {
 			source.stop(0);
 		});
+
+		playing = false;
 	}
 	
 	var setGain = function(track, value) {
 		gainNodes[track].gain.value = value;
 	}		
  	
+	var time = function() {
+		if (playing) {
+			offsetTime = context.currentTime;
+		}	 
+		return offsetTime - startTime;
+	}
+	
   return {
 		load: load,
 		play: play,
-		stop: stop
+		stop: stop, 
+		setGain: setGain,
+		time: time
   };
-
 })
