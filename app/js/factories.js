@@ -52,8 +52,10 @@ myApp.factory('AudioSources', function($q, $timeout) {
 			sources[i] = source;
 		}
 
+		console.log("Play from " + playTime);
+		
 		onEachSource(function(source) {
-			source.start(0);
+			source.start(0, playTime);
 		});
 	
 		startTime = context.currentTime;		
@@ -61,7 +63,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		playing = true;
 	}
 		
-	var stop = function() {
+	var pause = function() {
 		onEachSource(function(source) {
 			source.stop(0);
 		});
@@ -98,7 +100,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
   return {
 		load: load,
 		play: play,
-		stop: stop, 
+		pause: pause, 
 		setGain: setGain,
 		time: time,
 		duration: duration

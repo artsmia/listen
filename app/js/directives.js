@@ -1,16 +1,16 @@
 var myApp = angular.module('myApp.directives', []);
 
-myApp.directive('playStop', function() {
+myApp.directive('playPause', function() {
 	return {
 		template: '<input type="button" value="Play"></input>',
 		link: function(scope, button, attributes) {
 			button.bind("click", function() {
 				if (button.val() == "Play") {
-					button.val("Stop");
+					button.val("Pause");
 					scope.audioSources.play();
 				} else {
 					button.val("Play");
-					scope.audioSources.stop();
+					scope.audioSources.pause();
 				}
 			});
 		}
