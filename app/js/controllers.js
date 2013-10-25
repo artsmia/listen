@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myApp.controllers', []).
-  controller('ListenCtrl', ['$scope', '$q', '$timeout','AudioSources', function($scope, $q, $timeout, AudioSources) {
+  controller('ListenCtrl', ['$scope', '$q', '$rootScope', 'AudioSources', function($scope, $q, $rootScope, AudioSources) {
  		$scope.audioSources = AudioSources;
 
 		$scope.audioSources.load(
@@ -20,5 +20,9 @@ angular.module('myApp.controllers', []).
 			]							
 		).then(function(x) { $scope.buffers = x });
 		
+		// this .then thing above is not idiomatic; something an array of audio 
+		// buffers messes up directly binding to the view
+		// normally, follow the pattern shown in this tutorial:
+		// http://markdalgleish.com/2013/06/using-promises-in-angularjs-views/		
 						
   }]);
