@@ -52,8 +52,6 @@ myApp.factory('AudioSources', function($q, $timeout) {
 			sources[i] = source;
 		}
 		
-		console.log("Playing at " + playTime);
-
 		onEachSource(function(source) {
 			source.start(0, playTime);
 		});
@@ -74,8 +72,8 @@ myApp.factory('AudioSources', function($q, $timeout) {
 	var rewind = function() {
 		playTime = 0;
 		offsetTime = 0;
-		startTime = 0;
-		console.log("Playtime: " + playTime);
+		setTime();
+
 		if (playing) {
 			pause();
 			play();
