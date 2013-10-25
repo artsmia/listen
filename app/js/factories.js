@@ -9,6 +9,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
 	}			
 	
 	var buffers = new Array();
+	var _duration = 0;
 	
 	var load = function(audioURLs) {
 		var deferred = $q.defer();
@@ -18,6 +19,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
 			audioURLs,
 			function(loadedBuffers) {
 				buffers = loadedBuffers;
+				_duration = buffers[0].duration;
 				deferred.resolve(buffers);	
 			}				
 		);
@@ -67,7 +69,7 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		playing = false;
 	}
 	
-	var gain = function(track, value) {
+	var setGain = function(track, value) {
 		gainNodes[track].gain.value = value;
 	}		
 	
@@ -79,9 +81,9 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		if (playing) {
 			offsetTime = context.currentTime;
 		}	 
-		 playTime = offsetTime - startTime;
+		playTime = offsetTime - startTime;
 		
-		$timeout(setTime, 100)
+		$timeout(setTime, 1000)
 	}
 	setTime();
 	
@@ -89,11 +91,16 @@ myApp.factory('AudioSources', function($q, $timeout) {
 		return playTime;
 	}
 	
+	var duration = function() {
+		return _duration;
+	}
+	
   return {
 		load: load,
 		play: play,
 		stop: stop, 
-		gain: gain,
+		setGain: setGain,
 		time: time,
+		duration: duration
   };
 })
