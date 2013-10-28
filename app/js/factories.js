@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp.factories', []);
 
-myApp.factory('AudioSources', function($q, $timeout) {  	
+myApp.factory('AudioSources', function($q, $timeout, $http) {  	
 	try {
 	  window.AudioContext = window.AudioContext||window.webkitAudioContext;
 		var context = new AudioContext();
@@ -9,23 +9,35 @@ myApp.factory('AudioSources', function($q, $timeout) {
 	}			
 	
 	var buffers = new Array();
+
 	var _duration = 0;
 	
-	var load = function(audioURLs) {
+	var load = function(key) {
 		var deferred = $q.defer();
+
+		$http({method: 'GET', url: 'audio/index.json'}).
+			success(function(data, status, headers, config) {
+				var audioURLs = new Array();
 				
-		var bufferLoader = new BufferLoader(
-			context,
-			audioURLs,
-			function(loadedBuffers) {
-				buffers = loadedBuffers;
-				_duration = buffers[0].duration;
-				deferred.resolve(buffers);	
-			}				
-		);
+				for (var i = 0, length = data[key].length; i < length; i++) {				
+					audioURLs.push("audio/" + key + "/" + data[key][i]["file"]);
+				}
+				
+				var bufferLoader = new BufferLoader(
+					context,
+					audioURLs,
+					function(loadedBuffers) {
+						buffers = loadedBuffers;
+						_duration = buffers[0].duration;
+						deferred.resolve(buffers);	
+					}				
+				);
 		
-		bufferLoader.load();		
-		
+				bufferLoader.load();		
+
+
+			});
+				
 		return deferred.promise;			
 	}
 
