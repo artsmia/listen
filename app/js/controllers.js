@@ -7,12 +7,12 @@ angular.module('myApp.controllers', []).
 
 		var key = $location.path().slice(1)
 
-		// ^^^ can't use routes controller, which is the preferred way to do this,
+		// ^^^ can't use routes controller, which is the usual way to do this,
 		// because people go directly to these URLS
 
-		$scope.audioSources.load(key).then(function(x) { $scope.buffers = x });
+		$scope.audioSources.load(key).then(function(x) { $scope.tracks = x });
 		
-		// ^^^ this .then thing above is not idiomatic; something an array
+		// ^^^ this .then thing above is not idiomatic; something about an array
 		// of audio buffers messes up directly binding to the view
 		// normally, follow the pattern shown in this tutorial:
 		// http://markdalgleish.com/2013/06/using-promises-in-angularjs-views/		

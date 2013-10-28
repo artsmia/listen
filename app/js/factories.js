@@ -9,6 +9,8 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 	}			
 	
 	var buffers = new Array();
+	
+	var titles = new Array();
 
 	var _duration = 0;
 	
@@ -21,20 +23,20 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 				
 				for (var i = 0, length = data[key].length; i < length; i++) {				
 					audioURLs.push("audio/" + key + "/" + data[key][i]["file"]);
+					titles.push("audio/" + key + "/" + data[key][i]["title"]);
 				}
-				
+
 				var bufferLoader = new BufferLoader(
 					context,
 					audioURLs,
 					function(loadedBuffers) {
 						buffers = loadedBuffers;
 						_duration = buffers[0].duration;
-						deferred.resolve(buffers);	
+						deferred.resolve(titles);	
 					}				
 				);
 		
 				bufferLoader.load();		
-
 
 			});
 				
