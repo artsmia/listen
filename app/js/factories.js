@@ -23,7 +23,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 				
 				for (var i = 0, length = data[key].length; i < length; i++) {				
 					audioURLs.push("audio/" + key + "/" + data[key][i]["file"]);
-					titles.push("audio/" + key + "/" + data[key][i]["title"]);
+					titles.push(data[key][i]["title"]);
 				}
 
 				var bufferLoader = new BufferLoader(
