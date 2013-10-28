@@ -84,12 +84,18 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 	}
 	
 	var rewind = function() {
+		var wasPlaying = false;
+
+		if (playing) {
+			pause();
+			wasPlaying = true;
+		}
+
 		playTime = 0;
 		offsetTime = 0;
 		setTime();
 
-		if (playing) {
-			pause();
+		if (wasPlaying) {
 			play();
 		}
 	}
