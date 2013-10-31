@@ -7,7 +7,7 @@
 </head>
 <body ng-controller="ListenCtrl">
    <div ng-if="! tracks" id="loading">
-    Loading...
+    Loading... 
   </div>
 
   <div ng-if="tracks" id="mixer">
@@ -16,7 +16,9 @@
     
     <progress value="{{ audioSources.time() }}" max="{{ audioSources.duration() }}"></progress>
     
-    <div ng-repeat="track in tracks">
+    <br clear="both">
+    
+    <div ng-repeat="track in tracks" class="board">
       <div class="track">
         {{ track }} 
       </div>

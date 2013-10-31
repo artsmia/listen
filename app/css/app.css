@@ -29,6 +29,14 @@ progress {
 	
 }
 
-input[type='range'] {
-	width: 300px;
+.board {
+	float: left;
 }
+
+input[type='range'] {
+  -webkit-appearance: slider-vertical;
+	width: 20px;
+  height: 100px;
+}
+
+
