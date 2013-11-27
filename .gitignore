@@ -1,3 +1,4 @@
 /app/audio/*
+!/app/audio/*.json
 .DS_Store
 
