@@ -10,7 +10,10 @@ angular.module('myApp.controllers', []).
   // ^^^ can't use routes controller, which is the usual way to do this,
   // because people go directly to these URLS
 
-  $scope.audioSources.load(key).then(function(x) { $scope.tracks = x });
+  $scope.audioSources.load(key).then(function(x) {
+    $scope.object = x
+    $scope.tracks = x.titles
+  });
 
   // ^^^ this .then thing above is not idiomatic; something about an array
   // of audio buffers messes up directly binding to the view

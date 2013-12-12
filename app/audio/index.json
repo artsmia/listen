@@ -1,6 +1,13 @@
 {
   "01_Jade_Mountain": {
     "id": 4324,
+    "colors": [
+      "#949887",
+      "#b8bdac",
+      "#6d705c",
+      "#535341",
+      "#2a2a20"
+    ],
     "tracks": [
       {
         "file": "JadeMtn_Bed.mp3",
@@ -50,6 +57,13 @@
   },
   "02_Work27": {
     "id": 2078,
+    "colors": [
+      "#80010c",
+      "#5b4273",
+      "#5f1238",
+      "#b1a680",
+      "#dcc09b"
+    ],
     "tracks": [
       {
         "file": "Work27_Bed.mp3",
@@ -111,6 +125,11 @@
   },
   "03_Cho_Ken": {
     "id": 63689,
+    "colors": [
+      "#2c2d32",
+      "#5c564f",
+      "#877f73"
+    ],
     "tracks": [
       {
         "file": "Cho_Ken_Bed.mp3",
@@ -148,6 +167,13 @@
   },
   "04_Six_Tuscan_Poets": {
     "id": 1850,
+    "colors": [
+      "#473a2e",
+      "#220d03",
+      "#6c5743",
+      "#343a2c",
+      "#231c0b"
+    ],
     "tracks": [
       {
         "file": "Six_Tuscan_Poets_Bed_01.mp3",
@@ -193,6 +219,13 @@
   },
   "05_Olive_Trees": {
     "id": 1218,
+    "colors": [
+      "#c4bb84",
+      "#85571e",
+      "#a67e27",
+      "#827e65",
+      "#635b4f"
+    ],
     "tracks": [
       {
         "file": "Olive_Trees_Bed_01.mp3",
@@ -226,6 +259,12 @@
   },
   "06_Squatting_Drummer": {
     "id": 72222,
+    "colors": [
+      "#ab916c",
+      "#755f43",
+      "#d7bf98",
+      "#463725"
+    ],
     "tracks": [
       {
         "file": "Squatting_Drummer_Bed_01.mp3",
@@ -255,6 +294,12 @@
   },
   "07_Mask": {
     "id": 111388,
+    "colors": [
+      "#61615c",
+      "#492e22",
+      "#807460",
+      "#ccc3ae"
+    ],
     "tracks": [
       {
         "file": "Mask_Bed_01.mp3",
@@ -304,6 +349,11 @@
   },
   "08_Shiva": {
     "id": 376,
+    "colors": [
+      "#808387",
+      "#6d695d",
+      "#31302a"
+    ],
     "tracks": [
       {
         "file": "Shiva_Nataraja_Bed_01.mp3",
@@ -349,6 +399,13 @@
   },
   "09_Bronco": {
     "id": 1819,
+    "colors": [
+      "#432f20",
+      "#dbd2ba",
+      "#664d3a",
+      "#bda084",
+      "#456a6e"
+    ],
     "tracks": [
       {
         "file": "Bronco_Buster_Bed_01.mp3",
@@ -386,6 +443,13 @@
   },
   "10_St._Benedicy": {
     "id": 109582,
+    "colors": [
+      "#806f58",
+      "#a19272",
+      "#c6b798",
+      "#63543b",
+      "#44392b"
+    ],
     "tracks": [
       {
         "file": "St_Benedict_Bed_01.mp3",
@@ -415,6 +479,13 @@
   },
   "11_Fanatics": {
     "id": 1978,
+    "colors": [
+      "#3e3626",
+      "#5a7498",
+      "#351a08",
+      "#605838",
+      "#c0b494"
+    ],
     "tracks": [
       {
         "file": "Fanatics_of_Tangiers_Bed_01.mp3",
@@ -456,6 +527,9 @@
   },
   "12_Patty_and_Astor": {
     "id": 30567,
+    "colors": [
+      "#2b2a29"
+    ],
     "tracks": [
       {
         "file": "Patty_and_Astor_Bed_01.mp3",
@@ -493,6 +567,13 @@
   },
   "13_Soundsuit": {
     "id": 111576,
+    "colors": [
+      "#c6bdb2",
+      "#e5e3d0",
+      "#885042",
+      "#471818",
+      "#a5715c"
+    ],
     "tracks": [
       {
         "file": "Soundsuit_Bed_01.mp3",
@@ -534,6 +615,9 @@
   },
   "14_San_Fernando": {
     "id": 11904,
+    "colors": [
+      "#ffffff"
+    ],
     "tracks": [
       {
         "file": "San_Fernando_Bed_01.mp3",
@@ -571,6 +655,13 @@
   },
   "15_Armor": {
     "id": 108860,
+    "colors": [
+      "#7e3419",
+      "#b27a52",
+      "#372c2a",
+      "#5d332a",
+      "#a0532c"
+    ],
     "tracks": [
       {
         "file": "Armor_Bed_01.mp3",
@@ -596,6 +687,11 @@
   },
   "16_Ganymede": {
     "id": 1629,
+    "colors": [
+      "#a8a093",
+      "#736c65",
+      "#3c3730"
+    ],
     "tracks": [
       {
         "file": "Ganymede_Bed_01.mp3",
@@ -621,6 +717,13 @@
   },
   "17_Radio": {
     "id": 6783,
+    "colors": [
+      "#3b2f9d",
+      "#4a4544",
+      "#6a6467",
+      "#7c798a",
+      "#0d0732"
+    ],
     "tracks": [
       {
         "file": "Noturne_Radio_Bed_01.mp3",
@@ -658,6 +761,10 @@
   },
   "18_Nkisi": {
     "id": 1854,
+    "colors": [
+      "#332f27",
+      "#615647"
+    ],
     "tracks": [
       {
         "file": "Nkisi_Nkonde_Bed_01.mp3",
@@ -695,6 +802,13 @@
   },
   "19_Attendant_To_The_King_of_Hell": {
     "id": 5178,
+    "colors": [
+      "#aab4b8",
+      "#738283",
+      "#596667",
+      "#a89e81",
+      "#763a22"
+    ],
     "tracks": [
       {
         "file": "Attendent_to_King_of_Hell_Bed_01.mp3",
@@ -740,6 +854,13 @@
   },
   "20_Vicki": {
     "id": 2606,
+    "colors": [
+      "#98070e",
+      "#efea75",
+      "#221115",
+      "#f9d9d6",
+      "#5c1719"
+    ],
     "tracks": [
       {
         "file": "Vicki_Bed_01.mp3",
@@ -769,6 +890,13 @@
   },
   "21_Butterfly": {
     "id": 6176,
+    "colors": [
+      "#8f885d",
+      "#c4c3a9",
+      "#c0a872",
+      "#7d7d85",
+      "#6a5237"
+    ],
     "tracks": [
       {
         "file": "Butterfly_Catchers_Bed_01.mp3",

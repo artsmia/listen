@@ -62,12 +62,9 @@ myApp.directive('polarize', function() {
         scope.audioSources.setGain(index, inputVolume(newValue)/100)
       })
 
-      var fill = d3.scale.linear()
+      var fill = d3.scale.quantile()
         .domain([0, 1])
-        .range(["hsl(-180,50%,50%)", "hsl(180,50%,50%)"])
-        // todo: use the colors of each artwork?
-        .range(["hsl(74.12, 7.62%, 56.27%)", "hsl(133.95, 71.67%, 23.53%)", "hsl(163.87, 78.81%, 29.61%)", "hsl(60.00, 13.51%, 14.51%)"])
-        .interpolate(interpolateHsl)
+        .range(scope.object.colors)
 
       var arc = d3.svg.arc()
         .startAngle(0)
