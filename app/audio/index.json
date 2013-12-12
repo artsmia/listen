@@ -1,40 +1,807 @@
 {
-  "01_Jade_Mountain":[
-		{
-      "file": "JadeMtn_Bed.mp3",
-      "title": "Bed"
-    },
-    {
-      "file": "JadeMtn_Composer_01.mp3",
-      "title": "Composer 1"
-    },
-    {
-      "file": "JadeMtn_Composer_02.mp3",
-      "title": "Composer 2"
-    },
-    {
-      "file": "JadeMtn_Composer_03.mp3",
-      "title": "Composer 3"
-    },
-    {
-      "file": "JadeMtn_Composer_04.mp3",
-      "title": "Composer 4"
-    },
-    {
-      "file": "JadeMtn_Composer_05.mp3",
-      "title": "Composer 5"
-    },
-    {
-      "file": "JadeMtn_Composer_07.mp3",
-      "title": "Composer 7"
-    },
-    {
-      "file": "JadeMtn_Composer_08.mp3",
-      "title": "Composer 8"
-    },
-    {
-      "file": "JadeMtn_Composer_09.mp3",
-      "title": "Composer 9"
-    }
-  ]
+  "01_Jade_Mountain": {
+    "id": 4324,
+    "tracks": [
+      {
+        "file": "JadeMtn_Bed.mp3",
+        "title": "JadeMtn Bed"
+      },
+      {
+        "file": "JadeMtn_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "JadeMtn_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "JadeMtn_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "JadeMtn_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "JadeMtn_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "JadeMtn_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "JadeMtn_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "JadeMtn_Composer_08.mp3",
+        "title": "Composer 08"
+      },
+      {
+        "file": "JadeMtn_Composer_09.mp3",
+        "title": "Composer 09"
+      },
+      {
+        "file": "JadeMtn_Words.mp3",
+        "title": "JadeMtn Words"
+      }
+    ]
+  },
+  "02_Work27": {
+    "id": 2078,
+    "tracks": [
+      {
+        "file": "Work27_Bed.mp3",
+        "title": "Work27 Bed"
+      },
+      {
+        "file": "Work27_Composer_10_01.mp3",
+        "title": "10 01"
+      },
+      {
+        "file": "Work27_Composer_11_01.mp3",
+        "title": "11 01"
+      },
+      {
+        "file": "Work27_Composer_12_01.mp3",
+        "title": "12 01"
+      },
+      {
+        "file": "Work27_Composer_13_01.mp3",
+        "title": "13 01"
+      },
+      {
+        "file": "Work27_Composer_1_01.mp3",
+        "title": "1 01"
+      },
+      {
+        "file": "Work27_Composer_2_01.mp3",
+        "title": "2 01"
+      },
+      {
+        "file": "Work27_Composer_3_01.mp3",
+        "title": "3 01"
+      },
+      {
+        "file": "Work27_Composer_4_01.mp3",
+        "title": "4 01"
+      },
+      {
+        "file": "Work27_Composer_5_01.mp3",
+        "title": "5 01"
+      },
+      {
+        "file": "Work27_Composer_6_01.mp3",
+        "title": "6 01"
+      },
+      {
+        "file": "Work27_Composer_7_01.mp3",
+        "title": "7 01"
+      },
+      {
+        "file": "Work27_Composer_8_01.mp3",
+        "title": "8 01"
+      },
+      {
+        "file": "Work27_Composer_9_01.mp3",
+        "title": "9 01"
+      }
+    ]
+  },
+  "03_Cho_Ken": {
+    "id": 63689,
+    "tracks": [
+      {
+        "file": "Cho_Ken_Bed.mp3",
+        "title": "Ken Bed"
+      },
+      {
+        "file": "Cho_Ken_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Cho_Ken_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Cho_Ken_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Cho_Ken_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Cho_Ken_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Cho_Ken_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Cho_Ken_Composer_07.mp3",
+        "title": "Composer 07"
+      }
+    ]
+  },
+  "04_Six_Tuscan_Poets": {
+    "id": 1850,
+    "tracks": [
+      {
+        "file": "Six_Tuscan_Poets_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Bed_02.mp3",
+        "title": "Bed 02"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_03-01.mp3",
+        "title": "Composer 03-01"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "Six_Tuscan_Poets_Composer_08.mp3",
+        "title": "Composer 08"
+      }
+    ]
+  },
+  "05_Olive_Trees": {
+    "id": 1218,
+    "tracks": [
+      {
+        "file": "Olive_Trees_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Olive_Trees_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Olive_Trees_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Olive_Trees_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Olive_Trees_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Olive_Trees_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "OliveTrees_Bed_02.mp3",
+        "title": "Bed 02"
+      }
+    ]
+  },
+  "06_Squatting_Drummer": {
+    "id": 72222,
+    "tracks": [
+      {
+        "file": "Squatting_Drummer_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Squatting_Drummer_Bed_02.mp3",
+        "title": "Bed 02"
+      },
+      {
+        "file": "Squatting_Drummer_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Squatting_Drummer_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Squatting_Drummer_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Squatting_Drummer_Composer_04.mp3",
+        "title": "Composer 04"
+      }
+    ]
+  },
+  "07_Mask": {
+    "id": 111388,
+    "tracks": [
+      {
+        "file": "Mask_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Mask_Bed_02.mp3",
+        "title": "Bed 02"
+      },
+      {
+        "file": "Mask_Bed_03.mp3",
+        "title": "Bed 03"
+      },
+      {
+        "file": "Mask_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Mask_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Mask_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Mask_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Mask_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Mask_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Mask_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "Mask_Composer_08.mp3",
+        "title": "Composer 08"
+      }
+    ]
+  },
+  "08_Shiva": {
+    "id": 376,
+    "tracks": [
+      {
+        "file": "Shiva_Nataraja_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Shiva_Nataraja_Bed_02.mp3",
+        "title": "Bed 02"
+      },
+      {
+        "file": "Shiva_Nataraja_Bed_03.mp3",
+        "title": "Bed 03"
+      },
+      {
+        "file": "Shiva_Nataraja_Bed_04.mp3",
+        "title": "Bed 04"
+      },
+      {
+        "file": "Shiva_Nataraja_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Shiva_Nataraja_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Shiva_Nataraja_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Shiva_Nataraja_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Shiva_Nataraja_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Shiva_Nataraja_Words.mp3",
+        "title": "Nataraja Words"
+      }
+    ]
+  },
+  "09_Bronco": {
+    "id": 1819,
+    "tracks": [
+      {
+        "file": "Bronco_Buster_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Bronco_Buster_Bed_02.mp3",
+        "title": "Bed 02"
+      },
+      {
+        "file": "Bronco_Buster_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Bronco_Buster_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Bronco_Buster_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Bronco_Buster_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Bronco_Buster_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Bronco_Buster_Composer_06.mp3",
+        "title": "Composer 06"
+      }
+    ]
+  },
+  "10_St._Benedicy": {
+    "id": 109582,
+    "tracks": [
+      {
+        "file": "St_Benedict_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "St_Benedict_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "St_Benedict_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "St_Benedict_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "St_Benedict_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "St_Benedict_Composer_05.mp3",
+        "title": "Composer 05"
+      }
+    ]
+  },
+  "11_Fanatics": {
+    "id": 1978,
+    "tracks": [
+      {
+        "file": "Fanatics_of_Tangiers_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "Fanatics_of_Tangiers_Composer_08.mp3",
+        "title": "Composer 08"
+      }
+    ]
+  },
+  "12_Patty_and_Astor": {
+    "id": 30567,
+    "tracks": [
+      {
+        "file": "Patty_and_Astor_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Patty_and_Astor_Composer_07.mp3",
+        "title": "Composer 07"
+      }
+    ]
+  },
+  "13_Soundsuit": {
+    "id": 111576,
+    "tracks": [
+      {
+        "file": "Soundsuit_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Soundsuit_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Soundsuit_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Soundsuit_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Soundsuit_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Soundsuit_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Soundsuit_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Soundsuit_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "Soundsuit_Composer_08.mp3",
+        "title": "Composer 08"
+      }
+    ]
+  },
+  "14_San_Fernando": {
+    "id": 11904,
+    "tracks": [
+      {
+        "file": "San_Fernando_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "San_Fernando_composer_01.mp3",
+        "title": "composer 01"
+      },
+      {
+        "file": "San_Fernando_composer_02.mp3",
+        "title": "composer 02"
+      },
+      {
+        "file": "San_Fernando_composer_03.mp3",
+        "title": "composer 03"
+      },
+      {
+        "file": "San_Fernando_composer_04.mp3",
+        "title": "composer 04"
+      },
+      {
+        "file": "San_Fernando_composer_05.mp3",
+        "title": "composer 05"
+      },
+      {
+        "file": "San_Fernando_composer_06.mp3",
+        "title": "composer 06"
+      },
+      {
+        "file": "San_Fernando_composer_07.mp3",
+        "title": "composer 07"
+      }
+    ]
+  },
+  "15_Armor": {
+    "id": 108860,
+    "tracks": [
+      {
+        "file": "Armor_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Armor_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Armor_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Armor_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Japaese_Armor_Words_01.mp3",
+        "title": "Words 01"
+      }
+    ]
+  },
+  "16_Ganymede": {
+    "id": 1629,
+    "tracks": [
+      {
+        "file": "Ganymede_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Ganymede_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Ganymede_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Ganymede_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Ganymede_Composer_04.mp3",
+        "title": "Composer 04"
+      }
+    ]
+  },
+  "17_Radio": {
+    "id": 6783,
+    "tracks": [
+      {
+        "file": "Noturne_Radio_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Noturne_Radio_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Noturne_Radio_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Noturne_Radio_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Noturne_Radio_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Noturne_Radio_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Noturne_Radio_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Noturne_Radio_Composer_07.mp3",
+        "title": "Composer 07"
+      }
+    ]
+  },
+  "18_Nkisi": {
+    "id": 1854,
+    "tracks": [
+      {
+        "file": "Nkisi_Nkonde_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Nkisi_Nkonde_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Nkisi_Nkonde_Words_01.mp3",
+        "title": "Words 01"
+      }
+    ]
+  },
+  "19_Attendant_To_The_King_of_Hell": {
+    "id": 5178,
+    "tracks": [
+      {
+        "file": "Attendent_to_King_of_Hell_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_07.mp3",
+        "title": "Composer 07"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_08.mp3",
+        "title": "Composer 08"
+      },
+      {
+        "file": "Attendent_to_King_of_Hell_Composer_09.mp3",
+        "title": "Composer 09"
+      }
+    ]
+  },
+  "20_Vicki": {
+    "id": 2606,
+    "tracks": [
+      {
+        "file": "Vicki_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Vicki_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Vicki_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Vicki_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Vicki_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Vicki_Words_01.mp3",
+        "title": "Words 01"
+      }
+    ]
+  },
+  "21_Butterfly": {
+    "id": 6176,
+    "tracks": [
+      {
+        "file": "Butterfly_Catchers_Bed_01.mp3",
+        "title": "Bed 01"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_01.mp3",
+        "title": "Composer 01"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_02.mp3",
+        "title": "Composer 02"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_03.mp3",
+        "title": "Composer 03"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_04.mp3",
+        "title": "Composer 04"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_05.mp3",
+        "title": "Composer 05"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_06.mp3",
+        "title": "Composer 06"
+      },
+      {
+        "file": "Butterfly_Catchers_Composer_07.mp3",
+        "title": "Composer 07"
+      }
+    ]
+  }
 }

@@ -1,4 +1,3 @@
-/app/audio/*
-!/app/audio/*.json
+/app/audio/*/*.mp3
 .DS_Store
 

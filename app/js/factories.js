@@ -1,29 +1,31 @@
 var myApp = angular.module('myApp.factories', []);
 
-myApp.factory('AudioSources', function($q, $timeout, $http) {  	
+myApp.factory('AudioSources', function($q, $timeout, $http) {
 	try {
 	  window.AudioContext = window.AudioContext||window.webkitAudioContext;
 		var context = new AudioContext();
 	} catch(e) {
     alert('Web Audio API is not supported in this browser');
-	}			
-	
+	}
+
 	var buffers = new Array();
-	
+
 	var titles = new Array();
 
 	var _duration = 0;
-	
+
 	var load = function(key) {
 		var deferred = $q.defer();
 
 		$http({method: 'GET', url: 'audio/index.json'}).
 			success(function(data, status, headers, config) {
-				var audioURLs = new Array();
-				
-				for (var i = 0, length = data[key].length; i < length; i++) {				
-					audioURLs.push("audio/" + key + "/" + data[key][i]["file"]);
-					titles.push(data[key][i]["title"]);
+				var audioURLs = new Array(),
+                                tracks = data[key].tracks
+
+
+				for (var i = 0, length = tracks.length; i < length; i++) {
+                                        audioURLs.push("audio/" + key + "/" + tracks[i].file);
+                                        titles.push(tracks[i].title);
 				}
 
 				var bufferLoader = new BufferLoader(
@@ -32,15 +34,15 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 					function(loadedBuffers) {
 						buffers = loadedBuffers;
 						_duration = buffers[0].duration;
-						deferred.resolve(titles);	
-					}				
+						deferred.resolve(titles);
+					}
 				);
-		
-				bufferLoader.load();		
+
+				bufferLoader.load();
 
 			});
-				
-		return deferred.promise;			
+
+		return deferred.promise;
 	}
 
 	var onEachSource = function(f) {
