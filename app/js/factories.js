@@ -24,7 +24,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
 
 
 				for (var i = 0, length = tracks.length; i < length; i++) {
-                                        audioURLs.push("audio/" + key + "/" + tracks[i].file);
+                                        audioURLs.push("http://cdn.dx.artsmia.org/listen/" + key + "/" + tracks[i].file);
                                         titles.push(tracks[i].title);
 				}
 
