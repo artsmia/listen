@@ -1,140 +1,140 @@
 var myApp = angular.module('myApp.factories', []);
 
 myApp.factory('AudioSources', function($q, $timeout, $http) {
-	try {
-	  window.AudioContext = window.AudioContext||window.webkitAudioContext;
-		var context = new AudioContext();
-	} catch(e) {
+  try {
+    window.AudioContext = window.AudioContext||window.webkitAudioContext;
+    var context = new AudioContext();
+  } catch(e) {
     alert('Web Audio API is not supported in this browser');
-	}
+  }
 
-	var buffers = new Array();
+  var buffers = new Array();
 
-	var titles = new Array();
+  var titles = new Array();
 
-	var _duration = 0;
+  var _duration = 0;
 
-	var load = function(key) {
-		var deferred = $q.defer();
+  var load = function(key) {
+    var deferred = $q.defer();
 
-		$http({method: 'GET', url: 'audio/index.json'}).
-			success(function(data, status, headers, config) {
-				var audioURLs = new Array(),
-                                tracks = data[key].tracks
+    $http({method: 'GET', url: 'audio/index.json'}).
+      success(function(data, status, headers, config) {
+      var audioURLs = new Array(),
+      tracks = data[key].tracks
 
 
-				for (var i = 0, length = tracks.length; i < length; i++) {
-                                        audioURLs.push("http://cdn.dx.artsmia.org/listen/" + key + "/" + tracks[i].file);
-                                        titles.push(tracks[i].title);
-				}
+      for (var i = 0, length = tracks.length; i < length; i++) {
+        audioURLs.push("http://cdn.dx.artsmia.org/listen/" + key + "/" + tracks[i].file);
+        titles.push(tracks[i].title);
+      }
 
-				var bufferLoader = new BufferLoader(
-					context,
-					audioURLs,
-					function(loadedBuffers) {
-						buffers = loadedBuffers;
-						_duration = buffers[0].duration;
-						deferred.resolve(titles);
-					}
-				);
+      var bufferLoader = new BufferLoader(
+        context,
+        audioURLs,
+        function(loadedBuffers) {
+          buffers = loadedBuffers;
+          _duration = buffers[0].duration;
+          deferred.resolve(titles);
+        }
+      );
 
-				bufferLoader.load();
+      bufferLoader.load();
 
-			});
+    });
 
-		return deferred.promise;
-	}
+    return deferred.promise;
+  }
 
-	var onEachSource = function(f) {
-		for (var i = 0, length = sources.length; i < length; i++) {
-			f(sources[i]);
-		}
-	}
+  var onEachSource = function(f) {
+    for (var i = 0, length = sources.length; i < length; i++) {
+      f(sources[i]);
+    }
+  }
 
-	var sources = new Array();	
-	var gainNodes = new Array();		
-	var playing = false;
+  var sources = new Array();
+  var gainNodes = new Array();
+  var playing = false;
 
-	var play = function() {		
-		// a source can only be played once, so create just before playing so can play a second time after a stop		
-		for (var i = 0, length = buffers.length; i < length; i++) {
-			var source = context.createBufferSource();
-			source.buffer = buffers[i];
-			source.connect(context.destination);
-			gainNodes[i] = context.createGain();
-			source.connect(gainNodes[i]);
-			gainNodes[i].connect(context.destination);
-			gainNodes[i].gain.value = 0;						
-			sources[i] = source;
-		}
-		
-		onEachSource(function(source) {
-			source.start(0, playTime);
-		});
-	
-		startTime = context.currentTime - playTime;		
-		
-		playing = true;
-	}
-		
-	var pause = function() {
-		onEachSource(function(source) {
-			source.stop(0);
-		});
+  var play = function() {
+    // a source can only be played once, so create just before playing so can play a second time after a stop
+    for (var i = 0, length = buffers.length; i < length; i++) {
+      var source = context.createBufferSource();
+      source.buffer = buffers[i];
+      source.connect(context.destination);
+      gainNodes[i] = context.createGain();
+      source.connect(gainNodes[i]);
+      gainNodes[i].connect(context.destination);
+      gainNodes[i].gain.value = 0;
+      sources[i] = source;
+    }
 
-		playing = false;
-	}
-	
-	var rewind = function() {
-		var wasPlaying = false;
+    onEachSource(function(source) {
+      source.start(0, playTime);
+    });
 
-		if (playing) {
-			pause();
-			wasPlaying = true;
-		}
+    startTime = context.currentTime - playTime;
 
-		playTime = 0;
-		offsetTime = 0;
-		setTime();
+    playing = true;
+  }
 
-		if (wasPlaying) {
-			play();
-		}
-	}
-	
-	var setGain = function(track, value) {
-		gainNodes[track].gain.value = value;
-	}		
-	
-	var startTime = 0;	
-	var offsetTime = 0;
-	var playTime = 0;	
-	
-	var setTime = function() {
-		if (playing) {
-			offsetTime = context.currentTime;
-		}	 
-		playTime = offsetTime - startTime;
-		
-		$timeout(setTime, 1000)
-	}
-	setTime();
-	
-	var time = function() {
-		return playTime;
-	}
-	
-	var duration = function() {
-		return _duration;
-	}
-	
+  var pause = function() {
+    onEachSource(function(source) {
+      source.stop(0);
+    });
+
+    playing = false;
+  }
+
+  var rewind = function() {
+    var wasPlaying = false;
+
+    if (playing) {
+      pause();
+      wasPlaying = true;
+    }
+
+    playTime = 0;
+    offsetTime = 0;
+    setTime();
+
+    if (wasPlaying) {
+      play();
+    }
+  }
+
+  var setGain = function(track, value) {
+    gainNodes[track].gain.value = value;
+  }
+
+  var startTime = 0;
+  var offsetTime = 0;
+  var playTime = 0;
+
+  var setTime = function() {
+    if (playing) {
+      offsetTime = context.currentTime;
+    }
+    playTime = offsetTime - startTime;
+
+    $timeout(setTime, 1000)
+  }
+  setTime();
+
+  var time = function() {
+    return playTime;
+  }
+
+  var duration = function() {
+    return _duration;
+  }
+
   return {
-		load: load,
-		play: play,
-		pause: pause, 
-		rewind: rewind,
-		setGain: setGain,
-		time: time,
-		duration: duration
+    load: load,
+    play: play,
+    pause: pause,
+    rewind: rewind,
+    setGain: setGain,
+    time: time,
+    duration: duration
   };
 })
