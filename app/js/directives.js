@@ -106,7 +106,8 @@ myApp.directive('polarize', function() {
       window.api = {
         arcs: arcs,
         update: update,
-        fields: fields
+        fields: fields,
+        scope: scope
       }
 
       function interpolateHsl(a, b) {

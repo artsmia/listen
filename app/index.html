@@ -15,6 +15,8 @@
       width: 100%;
       height: 100%;
     }
+
+    img { position: absolute; bottom: 0; right: 0; }
   </style>
 </head>
 <body ng-controller="ListenCtrl" style="overflow: hidden;" polarize>
@@ -39,7 +41,9 @@
       </div>
     </div>
   </div>
-    
+
+  <img ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+
   <script src="lib/buffer-loader.js"></script>
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-route.js"></script>
