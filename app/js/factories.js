@@ -66,6 +66,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
       gainNodes[i].connect(context.destination);
       gainNodes[i].gain.value = 0;
       sources[i] = source;
+      source.loop = true
     }
 
     onEachSource(function(source) {
@@ -103,7 +104,8 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
   }
 
   var setGain = function(track, value) {
-    gainNodes[track].gain.value = value;
+    var node = gainNodes[track]
+    if(node) gainNodes[track].gain.value = value;
   }
 
   var startTime = 0;

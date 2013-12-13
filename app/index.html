@@ -28,7 +28,7 @@
     <input type="button" value="◂" id="rewind" rewind></input>
     <input type="button" value="▸" id="play-pause" play-pause></input>
 
-    <progress value="{{ audioSources.time() }}" max="{{ audioSources.duration() }}"></progress>
+    <progress value="{{ audioSources.time()%audioSources.duration() }}" max="{{ audioSources.duration() }}"></progress>
 
     <br clear="both">
 
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <img ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+  <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
 
   <script src="lib/buffer-loader.js"></script>
   <script src="lib/angular/angular.js"></script>
