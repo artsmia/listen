@@ -37,9 +37,9 @@ myApp.directive('polarize', function() {
     function polarize() {
       var w = window.innerWidth,
         h = window.innerHeight,
-        r = Math.min(w, h) / 1.9,
-        s = .09,
-        numRings = scope.tracks.length
+        numRings = scope.tracks.length,
+        r = Math.min(w, h) / numRings * 4.5,
+        s = .09
 
       var volume = d3.scale.linear().domain([0, 1]).clamp(true)
       var rings = d3.scale.linear()
