@@ -39,4 +39,5 @@ input[type='range'] {
   height: 100px;
 }
 
+img { z-index: -2; }
 

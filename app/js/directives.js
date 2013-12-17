@@ -120,6 +120,10 @@ myApp.directive('polarize', function() {
       document.ontouchmove = function(event){
         event.preventDefault();
       }
+      window.onresize = function() {
+        d3.selectAll('svg').data([]).exit().remove()
+        polarize()
+      }
     }
   }
 })

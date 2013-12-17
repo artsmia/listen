@@ -1,3 +1,4 @@
 /app/audio/*/*.mp3
+app/img
 .DS_Store
 
