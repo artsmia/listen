@@ -41,3 +41,9 @@ input[type='range'] {
 
 img { z-index: -2; }
 
+path.arc {
+  stroke-width: 0;
+}
+path.arc.dragging {
+  stroke-width: 5;
+}

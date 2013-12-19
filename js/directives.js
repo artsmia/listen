@@ -60,7 +60,32 @@ myApp.directive('polarize', function() {
         fields[index].volume = input.value = inputVolume(newValue)
         scope.$$phase || scope.$apply()
         scope.audioSources.setGain(index, inputVolume(newValue)/100)
+
+        var activeArc = d3.select('path.arc:nth-child(' + (index+1) + ')'),
+          arcPoint = arc.centroid(activeArc.datum()),
+          lineAttrs = 'm' + arcPoint[0] + ',' + arcPoint[1] + 'L' + (d3.event.x-w/2) + ',' + (d3.event.y-h/2),
+          arcFill = d3.rgb(activeArc.style('fill'))
+        d3.selectAll('path.line').remove()
+        d3.selectAll('path.dragging').classed('dragging', false)
+        window.activeArc = activeArc
+        activeArc.classed('dragging',true)
+        svg.append('path')
+          .style('stroke', arcFill.brighter(1.3))
+          .attr('class', 'line')
+          .attr('stroke-width', 4)
+          .attr('opacity', 0.9)
+          .attr('d', lineAttrs)
+
+        activeArc.style("stroke", arcFill.darker(1))
       })
+
+      mouseupTouchend = function() {
+        d3.selectAll('path.line').remove()
+        update(fields)
+      }
+      d3.select("body")
+        .on("mouseup", mouseupTouchend)
+        .on("touchend", mouseupTouchend)
 
       var fill = d3.scale.quantile()
         .domain([0, 1])
@@ -78,17 +103,19 @@ myApp.directive('polarize', function() {
           .attr("width", w)
           .attr("height", h)
         .append("g")
+          .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
       var fields = d3.range(0, numRings, 1).map(function(val, index) { return {value: (val+1)/10, index: (index+1)/10} });
 
       function update(data) {
-        var arcs = svg.selectAll("path")
+        var arcs = svg.selectAll("path.arc")
             .data(data, function(d) { return d.index; })
 
         arcs.enter().append("path")
         arcs
             .style("fill", function(d) { return fill(d.value); })
+            .attr("class", "arc")
             .attr("d", arc);
 
         arcs.exit().remove()
