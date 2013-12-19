@@ -74,7 +74,7 @@ myApp.directive('polarize', function() {
 
       d3.select("body")
           .call(drag)
-      var svg = d3.select("body").append("svg")
+      var svg = d3.select("section").append("svg")
           .attr("width", w)
           .attr("height", h)
         .append("g")

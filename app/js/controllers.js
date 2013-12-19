@@ -1,9 +1,12 @@
 'use strict';
 
-angular.module('myApp.controllers', []).
-  controller('ListenCtrl', ['$scope', '$q', '$timeout', '$location', '$http', 'AudioSources', function($scope, $q, $timeout, $location, $http, AudioSources) {
-
-  $scope.audioSources = AudioSources;
+angular.module('myApp.controllers', [])
+  .controller('homeCtrl', ['$scope', 'objects', function($scope, objects) {
+    $scope.objects = objects
+  }])
+  .controller('ListenCtrl', ['$scope', '$location', '$rootScope', 'AudioSources', 'objects', function($scope, $location, $rootScope, AudioSources, objects) {
+  if($rootScope.audioSources) $rootScope.audioSources.pause()
+  $rootScope.audioSources = $scope.audioSources = AudioSources;
 
   var key = $location.path().slice(1)
 

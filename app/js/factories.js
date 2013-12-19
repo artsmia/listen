@@ -20,7 +20,9 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     $http({method: 'GET', url: 'audio/index.json'}).
       success(function(data, status, headers, config) {
       var audioURLs = new Array(),
-      tracks = data[key].tracks
+        tracks = data[key].tracks,
+        titles = [], // reset from previous player
+        _duration = 0
 
 
       for (var i = 0, length = tracks.length; i < length; i++) {

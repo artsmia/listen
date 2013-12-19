@@ -1,0 +1,26 @@
+<section polarize>
+  <div ng-if="! tracks" id="loading">
+    Loading...
+  </div>
+
+  <div ng-if="tracks" id="mixer">
+    <input type="button" value="◂" id="rewind" rewind></input>
+    <input type="button" value="▸" id="play-pause" play-pause></input>
+
+    <progress value="{{ audioSources.time()%audioSources.duration() }}" max="{{ audioSources.duration() }}"></progress>
+
+    <br clear="both">
+
+    <div ng-repeat="track in tracks" class="board" style="display: none">
+      <div class="track">
+        {{ track }}
+      </div>
+      <div class="gain">
+        <input type="range" min="-100" max="100" value="0" ng-model="gain" ng-change="audioSources.setGain($index, gain / 100)">
+      </div>
+    </div>
+  </div>
+
+  <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+  <a href="#">Back</a>
+</section>
