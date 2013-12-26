@@ -37,6 +37,12 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
           buffers = loadedBuffers;
           _duration = buffers[0].duration;
           deferred.resolve({id: data[key].id, colors: data[key].colors, titles: titles});
+        },
+        function(progress) {
+          var percent = progress.reduce(function(sum, next, index, array) {
+            return sum + next
+          }, 0) / progress.length
+          deferred.notify({progress: percent, data: data[key]})
         }
       );
 

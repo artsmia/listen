@@ -13,9 +13,13 @@ angular.module('myApp.controllers', [])
   // ^^^ can't use routes controller, which is the usual way to do this,
   // because people go directly to these URLS
 
-  $scope.audioSources.load(key).then(function(x) {
-    $scope.object = x
-    $scope.tracks = x.titles
+  $scope.audioSources.load(key).then(function(tracks) {
+    $scope.tracks = tracks.titles
+  }, function(error) {
+  }, function(update) {
+    $scope.progress = update.progress
+    $scope.object = update.data
+    $scope.$$phase || $scope.$apply()
   });
 
   // ^^^ this .then thing above is not idiomatic; something about an array
