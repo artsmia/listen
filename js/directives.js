@@ -1,3 +1,5 @@
+/*jshint asi: true*/
+
 var myApp = angular.module('myApp.directives', []);
 
 myApp.directive('playPause', function() {
@@ -34,12 +36,12 @@ myApp.directive('polarize', function() {
     scope.$watch('tracks', function(tracks) {
       if(tracks) polarize()
     })
-    function polarize() {
+    function polarize(fields) {
       var w = window.innerWidth,
         h = window.innerHeight,
         numRings = scope.tracks.length,
         r = Math.min(w, h) / numRings * 4.5,
-        s = .09
+        s = 0.09
 
       var volume = d3.scale.linear().domain([0, 1]).clamp(true)
       var rings = d3.scale.linear()
@@ -106,7 +108,9 @@ myApp.directive('polarize', function() {
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
-      var fields = d3.range(0, numRings, 1).map(function(val, index) { return {value: (val+1)/10, index: (index+1)/10} });
+      var fields = fields || d3.range(0, numRings, 1).map(function(val, index) {
+        return {value: (val+1)/10, index: (index+1)/10}
+      });
 
       function update(data) {
         var arcs = svg.selectAll("path.arc")
@@ -147,9 +151,10 @@ myApp.directive('polarize', function() {
       document.ontouchmove = function(event){
         event.preventDefault();
       }
+
       window.onresize = function() {
         d3.selectAll('svg').data([]).exit().remove()
-        polarize()
+        polarize(fields)
       }
     }
   }
