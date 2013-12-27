@@ -85,7 +85,9 @@ myApp.directive('polarize', function() {
         if(!angular.equals(scope.undoStack[0], fields)) {
           scope.undoStack.unshift(angular.copy(fields))
           scope.$apply()
+          console.log('undoStack unshift')
         }
+        console.log('mute')
       }
       d3.select("body")
         .on("mouseup", mouseupTouchend)
@@ -102,6 +104,8 @@ myApp.directive('polarize', function() {
       function redo() {
         var oldFields = fields
         fields = scope.redoStack.splice(0, 1).pop()
+        un = angular.copy(scope.undoStack)
+        debugger
 
         scope.audioSources.setGains(fields.map(function(field) { return field.volume/100 }))
         update(fields)

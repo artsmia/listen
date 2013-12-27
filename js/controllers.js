@@ -25,5 +25,4 @@ angular.module('myApp.controllers', [])
 
   $scope.undoStack = []
   $scope.redoStack = []
-  $scope.undo = function() { api.undo() }
 }]);
