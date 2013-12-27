@@ -5,10 +5,11 @@
   </div>
 
   <div ng-if="tracks" id="mixer">
-    <input type="button" value="◂" id="rewind" rewind></input>
-    <input type="button" value="▸" id="play-pause" play-pause></input>
-
-    <progress value="{{ audioSources.time()%audioSources.duration() }}" max="{{ audioSources.duration() }}"></progress>
+    <div id="controls">
+      <input type="button" value="◂" id="rewind" rewind></input>
+      <input type="button" value="❙❙" id="play-pause" play-pause></input>
+      <progress value="{{ audioSources.time()%audioSources.duration() }}" max="{{ audioSources.duration() }}"></progress>
+    </div>
 
     <br clear="both">
 

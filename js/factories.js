@@ -87,6 +87,9 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
   }
 
   var pause = function() {
+    // don't try and stop them if they aren't playing
+    if(sources[0].playbackState != 2) return
+
     onEachSource(function(source) {
       source.stop(0);
     });

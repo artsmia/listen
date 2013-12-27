@@ -15,6 +15,7 @@ angular.module('myApp.controllers', [])
 
   $scope.audioSources.load(key).then(function(tracks) {
     $scope.tracks = tracks.titles
+    setTimeout($scope.audioSources.play, 0)
   }, function(error) {
   }, function(update) {
     $scope.progress = update.progress
