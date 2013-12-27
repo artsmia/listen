@@ -15,6 +15,7 @@ angular.module('myApp.controllers', [])
 
   $scope.audioSources.load(key).then(function(tracks) {
     $scope.tracks = tracks.titles
+    $scope.loaded = true
     setTimeout($scope.audioSources.play, 0)
   }, function(error) {
   }, function(update) {
@@ -27,5 +28,8 @@ angular.module('myApp.controllers', [])
   // of audio buffers messes up directly binding to the view
   // normally, follow the pattern shown in this tutorial:
   // http://markdalgleish.com/2013/06/using-promises-in-angularjs-views/
+
+  $scope.loadingScale = d3.scale.linear().domain([0, 70, 100]).range([0.25, 5, 1])
+  $scope.blurScale = d3.scale.linear().domain([0, 70, 100]).range([1, 20, 0])
 
 }]);

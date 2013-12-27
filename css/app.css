@@ -39,11 +39,45 @@ input[type='range'] {
   height: 100px;
 }
 
-img { z-index: -2; }
-
 path.arc {
   stroke-width: 0;
 }
 path.arc.dragging {
   stroke-width: 5;
+}
+
+svg {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+section img {
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* right: 0; */
+  z-index: -2;
+}
+
+img {
+  z-index: -2;
+  margin: 0 auto;
+  width: 300px;
+  -webkit-transition: -webkit-transform 1s ease-out;
+}
+.loaded #info {
+  -webkit-transition: -webkit-transform 1s 1.4s ease-out;
+  -webkit-transform: translateY(-110%)
+}
+
+#mixer #controls {
+  position: absolute;
+  bottom: 0;
+}
+
+section a {
+  position: absolute;
+  top: 0.25em;
 }
