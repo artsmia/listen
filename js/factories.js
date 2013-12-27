@@ -110,12 +110,20 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     if(node) gainNodes[track].gain.value = value;
   }
 
-  var zeroGain = function(track) {
+  // 'Damp' the gain of one (when an index is passed as `track`)
+  //   or all (`track` is null), tracks:
+  // Reset all track to have a maximum gain of `damp` or -1.
+  var dampGain = function(track, damp) {
+    function _damp(node) {
+      var gain = node.gain,
+        newGain = Math.min(damp || -1, gain.value)
+      gain.value = newGain
+    }
+
     if(track) {
-      gainNodes[track].gain.value = 0
+      _damp(gainNodes[track])
     } else {
-      window.gainNodes = gainNodes
-      gainNodes.map(function(node, i) { return node.gain.value = -1 })
+      gainNodes.map(_damp)
     }
   }
 
@@ -147,7 +155,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     pause: pause,
     rewind: rewind,
     setGain: setGain,
-    zeroGain: zeroGain,
+    dampGain: dampGain,
     time: time,
     duration: duration
   };

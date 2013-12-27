@@ -59,7 +59,7 @@ myApp.directive('polarize', function() {
         update(fields)
         fields[index].volume = input.value = inputVolume(newValue)
         scope.$$phase || scope.$apply()
-        scope.audioSources.zeroGain()
+        scope.audioSources.dampGain(null, -0.75)
         scope.audioSources.setGain(index, inputVolume(newValue)/100)
 
         var activeArc = d3.select('path.arc:nth-child(' + (index+1) + ')'),
@@ -85,7 +85,7 @@ myApp.directive('polarize', function() {
         update(fields)
 
         // reset gain to what it was before zero`ing in on the active track
-        fields.map(function(f, index) { scope.audioSources.setGain(index, f.value) })
+        fields.map(function(f, index) { scope.audioSources.setGain(index, f.volume/100) })
       }
       d3.select("body")
         .on("mouseup", mouseupTouchend)
