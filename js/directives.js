@@ -54,13 +54,15 @@ myApp.directive('polarize', function() {
       var drag = d3.behavior.drag().on("drag", function(d,i) {
         var index = rings(d3.event.x),
             input = d3.selectAll('.gain input')[0][index],
-            newValue
-        newValue = fields[index].value = volume(d3.event.y/h*1.1)
+            newValue = fields[index].value = volume(d3.event.y/h*1.1),
+            _volume = inputVolume(newValue)
+
         update(fields)
-        fields[index].volume = input.value = inputVolume(newValue)
+        fields[index].volume = input.value = _volume
         scope.$$phase || scope.$apply()
-        scope.audioSources.dampGain(null, -0.75)
-        scope.audioSources.setGain(index, inputVolume(newValue)/100)
+        damper = _volume <= -25 ? -0.9 : -0.75
+        scope.audioSources.dampGain(null, damper)
+        scope.audioSources.setGain(index, _volume/100)
 
         var activeArc = d3.select('path.arc:nth-child(' + (index+1) + ')'),
           arcPoint = arc.centroid(activeArc.datum()),
