@@ -109,6 +109,11 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     var node = gainNodes[track]
     if(node) gainNodes[track].gain.value = value;
   }
+  var setGains = function(gains) {
+    gainNodes.map(function(node, index) {
+      node.gain.value = gains[index]
+    })
+  }
 
   var startTime = 0;
   var offsetTime = 0;
@@ -138,6 +143,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     pause: pause,
     rewind: rewind,
     setGain: setGain,
+    setGains: setGains,
     time: time,
     duration: duration
   };

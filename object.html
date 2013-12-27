@@ -23,4 +23,5 @@
 
   <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
   <a href="#">Back</a>
+  <a ng-if="mixes.length > 1" ng-click="undo()">undo ({{mixes.length}})</a>
 </section>

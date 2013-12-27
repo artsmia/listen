@@ -23,4 +23,6 @@ angular.module('myApp.controllers', [])
   // normally, follow the pattern shown in this tutorial:
   // http://markdalgleish.com/2013/06/using-promises-in-angularjs-views/
 
+  $scope.mixes = []
+  $scope.undo = api.undo
 }]);
