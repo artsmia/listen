@@ -28,7 +28,7 @@ myApp.directive('rewind', function() {
   }
 })
 
-myApp.directive('polarize', function() {
+myApp.directive('polarize', function($location) {
   return function(scope) {
     window.polarizeScope = scope
     scope.$watch('tracks', function(tracks) {
@@ -106,7 +106,10 @@ myApp.directive('polarize', function() {
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
-      var fields = d3.range(0, numRings, 1).map(function(val, index) { return {value: (val+1)/10, index: (index+1)/10} });
+      var fields = d3.range(0, numRings, 1).map(function(val, index) {
+        return {value: (val+1)/10, index: (index+1)/10}
+      });
+      loadMix()
 
       function update(data) {
         var arcs = svg.selectAll("path.arc")
@@ -137,13 +140,20 @@ myApp.directive('polarize', function() {
         scope: scope
       }
 
-      function interpolateHsl(a, b) {
-        var i = d3.interpolateString(a, b);
-        return function(t) {
-          return d3.hsl(i(t));
-        };
+      function loadMix() {
+        fields.map(function(field, index) {
+          var mix = scope.loadMix && scope.loadMix[index] && parseInt(scope.loadMix[index])/100
+          if(mix && mix >=0) field.value = mix
+        })
       }
 
+      scope.$watch(function() { return $location.search() }, function() {
+        if($location.search().mix) {
+          scope.loadMix = $location.search().mix.split(',')
+          loadMix()
+          update(fields)
+        }
+      });
       document.ontouchmove = function(event){
         event.preventDefault();
       }

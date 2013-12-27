@@ -1,17 +1,18 @@
 'use strict';
 
 angular.module('myApp.controllers', [])
-  .controller('homeCtrl', ['$scope', 'objects', function($scope, objects) {
+
+.controller('homeCtrl', ['$scope', 'objects', function($scope, objects) {
     $scope.objects = objects
-  }])
-  .controller('ListenCtrl', ['$scope', '$location', '$rootScope', 'AudioSources', 'objects', function($scope, $location, $rootScope, AudioSources, objects) {
+}])
+
+.controller('ListenCtrl', [ '$scope', '$rootScope', 'AudioSources', 'objects', '$routeParams', '$location', function($scope, $rootScope, AudioSources, objects, $routeParams, $location) {
   if($rootScope.audioSources) $rootScope.audioSources.pause()
   $rootScope.audioSources = $scope.audioSources = AudioSources;
 
-  var key = $location.path().slice(1)
-
-  // ^^^ can't use routes controller, which is the usual way to do this,
-  // because people go directly to these URLS
+  var key = $routeParams.key,
+      mix = $location.search().mix
+  $scope.loadMix = mix && mix.split(',')
 
   $scope.audioSources.load(key).then(function(x) {
     $scope.object = x
@@ -23,4 +24,9 @@ angular.module('myApp.controllers', [])
   // normally, follow the pattern shown in this tutorial:
   // http://markdalgleish.com/2013/06/using-promises-in-angularjs-views/
 
+  $scope.saveMix = function() {
+    var mix = api.fields.map(function(f) { return parseInt(f.value*100) }).join(",")
+
+    $location.search('mix', mix)
+  }
 }]);
