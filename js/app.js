@@ -27,6 +27,7 @@ myApp.config(function($routeProvider) {
     .when('/:key', {
       templateUrl: 'object.html',
       controller: 'ListenCtrl',
-      resolve: { objects: objectsJson }
+      resolve: { objects: objectsJson },
+      reloadOnSearch: false
     })
 })
