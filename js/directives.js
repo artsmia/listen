@@ -82,15 +82,26 @@ myApp.directive('polarize', function() {
       mouseupTouchend = function() {
         d3.selectAll('path.line').remove()
         update(fields)
-        if(!angular.equals(scope.mixes[0], fields)) scope.mixes.unshift(angular.copy(fields))
+        if(!angular.equals(scope.undoStack[0], fields)) {
+          scope.undoStack.unshift(angular.copy(fields))
+          scope.$apply()
+        }
       }
       d3.select("body")
         .on("mouseup", mouseupTouchend)
         .on("touchend", mouseupTouchend)
 
       function undo() {
-        var oldFields = fields,
-            fields = scope.mixes.splice(1, 1).pop()
+        scope.redoStack.unshift(fields)
+        fields = scope.undoStack.splice(1, 1).pop()
+
+        scope.audioSources.setGains(fields.map(function(field) { return field.volume/100 }))
+        update(fields)
+      }
+
+      function redo() {
+        var oldFields = fields
+        fields = scope.redoStack.splice(0, 1).pop()
 
         scope.audioSources.setGains(fields.map(function(field) { return field.volume/100 }))
         update(fields)
@@ -116,7 +127,7 @@ myApp.directive('polarize', function() {
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
       var fields = d3.range(0, numRings, 1).map(function(val, index) { return {value: (val+1)/10, index: (index+1)/10} });
-      scope.mixes.push(angular.copy(fields))
+      scope.undoStack.push(angular.copy(fields))
 
       function update(data) {
         var arcs = svg.selectAll("path.arc")
@@ -140,12 +151,13 @@ myApp.directive('polarize', function() {
           .attr("text-anchor", "middle")
           .text(function(d, i) { return scope.tracks[i] });
 
-      window.api = {
+      scope.api = window.api = {
         arcs: arcs,
         update: update,
         fields: fields,
         scope: scope,
-        undo: undo
+        undo: undo,
+        redo: redo
       }
 
       function interpolateHsl(a, b) {
