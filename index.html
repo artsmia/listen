@@ -6,21 +6,11 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>MIA – Listen To The Collection</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,300italic,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/app.css"/>
-  <style>
-  svg {
-    position: absolute;
-    top: 0; left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-  }
-
-  section img { position: absolute; bottom: 0; right: 0; }
-  </style>
 </head>
   <body>
-  <div ng-view></div>
+  <div id="container" ng-view></div>
 
   <script src="lib/buffer-loader.js"></script>
   <script src="lib/angular/angular.js"></script>
