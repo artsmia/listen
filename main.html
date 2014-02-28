@@ -10,6 +10,7 @@
   <figure ng-repeat="(name, track) in objects">
     <a ng-href="#/{{name}}">
       <img ng-src="//api.artsmia.org/images/{{track.id}}/600/medium.jpg">
+      <figcaption ng-bind="track.title"></figcaption>
     </a>
   </figure>
 </section>

@@ -21,6 +21,11 @@
     </div>
   </div>
 
-  <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+  <figure class="lone">
+    <a href="//collections.artsmia.org/index.php?page=detail&id={{object.id}}">
+      <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+      <figcaption class="show" ng-bind="object.title"></figcaption>
+    </a>
+  </figure>
   <a href="#">Back</a>
 </section>

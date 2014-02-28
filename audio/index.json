@@ -1,6 +1,7 @@
 {
   "01_Jade_Mountain": {
     "id": 4324,
+    "title": "Jade Mountain",
     "colors": [
       "#f7fcf8",
       "#535041",
@@ -57,6 +58,7 @@
   },
   "02_Work27": {
     "id": 2078,
+    "title": "Work No. 27, Red Wing",
     "colors": [
       "#c70015",
       "#efd101",
@@ -125,6 +127,7 @@
   },
   "03_Cho_Ken": {
     "id": 63689,
+    "title": "Cho_ken with Bamboo Pattern",
     "colors": [
       "#fff1d9",
       "#292a2f",
@@ -169,6 +172,7 @@
   },
   "04_Six_Tuscan_Poets": {
     "id": 1850,
+    "title": "Six Tuscan Poets",
     "colors": [
       "#bfbcad",
       "#1e2829",
@@ -221,6 +225,7 @@
   },
   "05_Olive_Trees": {
     "id": 1218,
+    "title": "Olive Trees",
     "colors": [
       "#E2D9A8",
       "#B2BFDB",
@@ -261,6 +266,7 @@
   },
   "06_Squatting_Drummer": {
     "id": 72222,
+    "title": "Figure of a Squatting Drummer",
     "colors": [
       "#e9d0a7",
       "#3c2e21",
@@ -297,6 +303,7 @@
   },
   "07_Mask": {
     "id": 111388,
+    "title": "Mask",
     "colors": [
       "#e2d9c8",
       "#573625",
@@ -353,6 +360,7 @@
   },
   "08_Shiva": {
     "id": 376,
+    "title": "Shiva Nataraja (Lord of the Dance)",
     "colors": [
       "#f9ead7",
       "#545044",
@@ -405,6 +413,7 @@
   },
   "09_Bronco": {
     "id": 1819,
+    "title": "Bronco Buster",
     "colors": [
       "#e4dcc7",
       "#892818",
@@ -449,6 +458,7 @@
   },
   "10_St._Benedicy": {
     "id": 109582,
+    "title": "Saint Benedict of Palermo",
     "colors": [
       "#d8d3d0",
       "#2d2f2e",
@@ -485,6 +495,7 @@
   },
   "11_Fanatics": {
     "id": 1978,
+    "title": "Fanatics of Tangier",
     "colors": [
       "#d2c8a4",
       "#441f05",
@@ -533,6 +544,7 @@
   },
   "12_Patty_and_Astor": {
     "id": 30567,
+    "title": "Patty and Astor",
     "colors": [
       "#f0f2ef",
       "#22211f",
@@ -577,6 +589,7 @@
   },
   "13_Soundsuit": {
     "id": 111576,
+    "title": "Soundsuit",
     "colors": [
       "#cfbe54",
       "#203a5f",
@@ -626,6 +639,7 @@
   },
   "14_San_Fernando": {
     "id": 11904,
+    "title": "San Fernando, California",
     "colors": [
       "#e8e8e8",
       "#302e31",
@@ -670,6 +684,7 @@
   },
   "15_Armor": {
     "id": 108860,
+    "title": "Armor",
     "colors": [
       "#e2cc76",
       "#423330",
@@ -702,6 +717,7 @@
   },
   "16_Ganymede": {
     "id": 1629,
+    "title": "Ganymede and the Eagle",
     "colors": [
       "#f2f0f1",
       "#a99d8d",
@@ -734,6 +750,7 @@
   },
   "17_Radio": {
     "id": 6783,
+    "title": "\"Nocturne\" radio",
     "colors": [
       "#beb8c2",
       "#362f8c",
@@ -778,6 +795,7 @@
   },
   "18_Nkisi": {
     "id": 1854,
+    "title": "Power figure",
     "colors": [
       "#e1ded5",
       "#332c22",
@@ -822,6 +840,7 @@
   },
   "19_Attendant_To_The_King_of_Hell": {
     "id": 5178,
+    "title": "Attendant to the King of Hell",
     "colors": [
       "#fff8f0",
       "#8b3117",
@@ -874,6 +893,7 @@
   },
   "20_Vicki": {
     "id": 2606,
+    "title": "Vicki! I--I Thought I Heard Your Voice!",
     "colors": [
       "#f1f1f1",
       "#1a1917",
@@ -910,6 +930,7 @@
   },
   "21_Butterfly": {
     "id": 6176,
+    "title": "The Butterfly Catchers",
     "colors": [
       "#d4d5d7",
       "#9e4740",

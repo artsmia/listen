@@ -36,7 +36,12 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
         function(loadedBuffers) {
           buffers = loadedBuffers;
           _duration = buffers[0].duration;
-          deferred.resolve({id: data[key].id, colors: data[key].colors, titles: titles});
+          deferred.resolve({
+            id: data[key].id,
+            colors: data[key].colors,
+            titles: titles,
+            title: data[key].title
+          });
         }
       );
 

@@ -15,8 +15,6 @@ p {
   color: #ededed;
 }
 
-img { z-index: -2; }
-
 path.arc {
   stroke-width: 0;
 }
@@ -48,6 +46,9 @@ header h3 {
 }
 
 @media screen and (max-width: 29em) {
+  #objects {
+    padding-top: 0 !important;
+  }
 }
 @media screen and (min-width: 30em) {
   #objects {
@@ -79,8 +80,25 @@ header h3 {
   background-color: rgb(34, 34, 34);
 }
 
-#objects figure {
+figure {
   margin: 0 auto;
+  position: relative;
+}
+figure figcaption {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.8;
+  text-align: center;
+  background: rgba(34, 34, 34, 0.4);
+  padding: 1em;
+  color: #ededed;
+}
+figure:hover figcaption,
+figure:active figcaption,
+figcaption.show {
+  opacity: 1;
+  background: rgba(34, 34, 34, 0.9);
 }
 
 #objects img {
@@ -109,4 +127,8 @@ svg {
 }
 
 section#mixer { border: none; }
-#mixer img { position: absolute; bottom: 0; right: 0; }
+#mixer figure {
+  position: absolute; bottom: 0; right: 0;
+  z-index: -2;
+}
+figure figcaption.show { z-index: 20 !important; }
