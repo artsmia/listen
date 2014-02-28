@@ -54,17 +54,17 @@ header h3 {
     -webkit-column-count: 2;
     -webkit-column-width: 50%;
   }
-  @media (min-width: 40em) {
-    #objects {
-      -webkit-column-count: 3;
-      -webkit-column-width: 33%;
-    }
+}
+@media (min-width: 40em) {
+  #objects {
+    -webkit-column-count: 3;
+    -webkit-column-width: 33%;
   }
-  @media (min-width: 50em) {
-    #objects {
-      -webkit-column-count: 4;
-      -webkit-column-width: 25%;
-    }
+}
+@media (min-width: 50em) {
+  #objects {
+    -webkit-column-count: 4;
+    -webkit-column-width: 25%;
   }
 }
 
