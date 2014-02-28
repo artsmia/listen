@@ -1,5 +1,40 @@
-<figure ng-repeat="(name, track) in objects">
-  <a ng-href="#/{{name}}">
-    <img ng-src="//api.artsmia.org/images/{{track.id}}/300/small.jpg">
-  </a>
-</figure>
+<header>
+  <h1><strong>Listen</strong> to the Collection</h1>
+  <h3>Presented by the <abbr title="Minneapolis Institute of Arts">MIA</abbr> and
+      <abbr title="Institute of Museum and Library Sciences">IMLS</abbr></h3>
+</header>
+<section id="instructions">
+  <p class="panel">Listen! is a Web based sound mixing application that allows users to remix recorded music and sound interpretations, recorded by Minnesota musicians, of 21 objects in the MIA's collection. Simply choose a piece and then andvance to our ultra-cool mixer, press "PLAY" and start mixing!</p>
+</section>
+<section id="objects">
+  <figure ng-repeat="(name, track) in objects">
+    <a ng-href="#/{{name}}">
+      <img ng-src="//api.artsmia.org/images/{{track.id}}/300/small.jpg">
+    </a>
+  </figure>
+</section>
+<section id="credits">
+  <div class="panel">
+    <h3>Credits</h3>
+    <p><em>Guitar, Percussion, Keyboards, Sample Orchestration, Sound Design</em><br />Tom Hambleton, Undertone Music<br/>
+    www.undertonemusic.com</p>
+
+    <p><em>Guitar, Percussion, Keyboards, Sample Orchestration</em><br />Ed Ackerson, Flowers Studio<br/>
+    http://www.flowersstudio.com/</p>
+
+    <p><em>HipHop Grooves</em><br />Chris Caesar of Literati, Out of Bounds<br/>
+    https://www.facebook.com/theliterati</p>
+
+    <p><em>Drums and Percussion</em><br />JT Bates of Fat Kid Wednesday, The Pines, and Alpha Consumer<br/>
+    https://twitter.com/jt_bates</p>
+
+    <p><em>Piano & Keyboards</em><br />Tanner Taylor - has played with Clark Terry, Slide Hampton, Lew Tabackin, David "Fathead" Newman, Steve Turre, Delfeayo Marsalis, and others<br/>
+    http://jazzcentralstudios.org</p>
+
+    <p><em>Guitar and Guitar FX</em><br />Mike Michel of Saltee, Rock & Roll Therapy Room, Bill Mike Band<br/>
+    http://www.mikemichelmusic.com/</p>
+
+    <p><em>Cello</em><br />Christopher Quinn of Billy Mclaughlin<br/>
+    http://www.quinnviolins.com/</p>
+  </div>
+</section>

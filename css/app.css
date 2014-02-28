@@ -1,42 +1,18 @@
-/* app css stylesheet */
-
-#loading {
-	
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-#mixer {
-	
+h1, h2, h3, h4, h5, h6 {
+  color: white;
 }
-
-#rewind {
-	width: 30px;
-}
-
-#play-pause {
-	width: 30px;
-}
-
-progress {
-	width: 300px;
-}
-
-.track {
-	width: 100px;
-	float: left;
-}
-
-.gain {
-	
-}
-
-.board {
-	float: left;
-}
-
-input[type='range'] {
-  -webkit-appearance: slider-vertical;
-	width: 20px;
-  height: 100px;
+p {
+  font-size: 1.3em;
+  color: #ededed;
 }
 
 img { z-index: -2; }
@@ -47,3 +23,80 @@ path.arc {
 path.arc.dragging {
   stroke-width: 5;
 }
+
+header, footer, section {
+  border: 1px solid;
+}
+header {
+  background-color: rgb(23, 136, 163);
+  min-height: 80%;
+}
+header * {
+  text-indent: -100em;
+}
+header h1 {
+  background: url(../img/listen-logo-v5.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 7em;
+}
+header h3 {
+  background: url(../img/mia-imls.svg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 4em;
+}
+
+@media screen and (max-width: 29em) {
+}
+@media screen and (min-width: 30em) {
+  #objects {
+    -webkit-column-count: 2;
+    -webkit-column-width: 50%;
+  }
+  @media (min-width: 40em) {
+    #objects {
+      -webkit-column-count: 3;
+      -webkit-column-width: 33%;
+    }
+  }
+  @media (min-width: 50em) {
+    #objects {
+      -webkit-column-count: 4;
+      -webkit-column-width: 25%;
+    }
+  }
+}
+
+#objects {
+  padding-top: 1em;
+  background-color: rgb(34, 34, 34);
+}
+
+#objects figure {
+  margin: 0 auto;
+}
+
+#objects img {
+  width: 100%;
+}
+
+#credits, #instructions {
+  background-color: rgb(41, 134, 88);
+}
+#credits .panel, #instructions .panel {
+	padding: 1em;
+	margin:0 auto;
+	max-width:450px;
+}
+
+svg {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+section#mixer { border: none; }
+#mixer img { position: absolute; bottom: 0; right: 0; }
