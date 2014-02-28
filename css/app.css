@@ -55,16 +55,22 @@ header h3 {
     -webkit-column-width: 50%;
   }
 }
-@media (min-width: 40em) {
+@media (min-width: 45em) {
   #objects {
     -webkit-column-count: 3;
     -webkit-column-width: 33%;
   }
 }
-@media (min-width: 50em) {
+@media (min-width: 57em) {
   #objects {
     -webkit-column-count: 4;
     -webkit-column-width: 25%;
+  }
+}
+@media (min-width: 69em) {
+  #objects {
+    -webkit-column-count: 5;
+    -webkit-column-width: 20%;
   }
 }
 
