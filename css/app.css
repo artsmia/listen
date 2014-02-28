@@ -87,7 +87,11 @@ header h3 {
 #credits .panel, #instructions .panel {
 	padding: 1em;
 	margin:0 auto;
-	max-width:450px;
+	max-width: 550px;
+}
+#credits a {
+  color: #ededed;
+  text-decoration: underline;
 }
 
 svg {
