@@ -1,6 +1,6 @@
-var myApp = angular.module('myApp.directives', []);
+var miaListen = angular.module('miaListen.directives', []);
 
-myApp.directive('playPause', function() {
+miaListen.directive('playPause', function() {
   return {
     template: '<input type="button" value="▸" id="play-pause"></input>',
     link: function(scope, button, attributes) {
@@ -20,7 +20,7 @@ myApp.directive('playPause', function() {
   }
 });
 
-myApp.directive('rewind', function() {
+miaListen.directive('rewind', function() {
   return {
     template: '<input type="button" value="◂" id="rewind"></input>',
     link: function(scope, button, attributes) {
@@ -31,7 +31,7 @@ myApp.directive('rewind', function() {
   }
 })
 
-myApp.directive('polarize', function($location) {
+miaListen.directive('polarize', function($location) {
   return function(scope) {
     window.polarizeScope = scope
     scope.$watch('tracks', function(tracks) {

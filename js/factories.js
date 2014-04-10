@@ -1,7 +1,7 @@
-var myApp = angular.module('myApp.factories', []),
+var miaListen = angular.module('miaListen.factories', []),
     BufferLoader = require('../lib/buffer-loader')
 
-myApp.factory('AudioSources', function($q, $timeout, $http) {
+miaListen.factory('AudioSources', function($q, $timeout, $http) {
   try {
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     var context = new AudioContext();

@@ -1,13 +1,13 @@
 'use strict';
 
-var myApp = angular.module('myApp', [
+var miaListen = angular.module('miaListen', [
   'ngRoute',
-	'myApp.factories',
-	'myApp.directives',
-  'myApp.controllers'
+  'miaListen.factories',
+  'miaListen.directives',
+  'miaListen.controllers'
 ]);
 
-myApp.config(function($routeProvider) {
+miaListen.config(function($routeProvider) {
   var objectsJson = function($q, $http, $route) {
     var d = $q.defer();
     $http.get('audio/index.json', {cache: true}).then(function(response) {

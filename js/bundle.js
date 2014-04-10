@@ -1,14 +1,14 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-var myApp = angular.module('myApp', [
+var miaListen = angular.module('miaListen', [
   'ngRoute',
-	'myApp.factories',
-	'myApp.directives',
-  'myApp.controllers'
+  'miaListen.factories',
+  'miaListen.directives',
+  'miaListen.controllers'
 ]);
 
-myApp.config(function($routeProvider) {
+miaListen.config(function($routeProvider) {
   var objectsJson = function($q, $http, $route) {
     var d = $q.defer();
     $http.get('audio/index.json', {cache: true}).then(function(response) {
@@ -40,7 +40,7 @@ require('./controllers')
 },{"./controllers":2,"./directives":3,"./factories":4}],2:[function(require,module,exports){
 'use strict';
 
-angular.module('myApp.controllers', [])
+angular.module('miaListen.controllers', [])
 
 .controller('homeCtrl', ['$scope', 'objects', function($scope, objects) {
     $scope.objects = objects
@@ -65,14 +65,15 @@ angular.module('myApp.controllers', [])
 
   $scope.saveMix = function() {
     var mix = api.fields.map(function(f) { return parseInt(f.value*100) }).join(",")
+
     $location.search('mix', mix)
   }
 }]);
 
 },{}],3:[function(require,module,exports){
-var myApp = angular.module('myApp.directives', []);
+var miaListen = angular.module('miaListen.directives', []);
 
-myApp.directive('playPause', function() {
+miaListen.directive('playPause', function() {
   return {
     template: '<input type="button" value="▸" id="play-pause"></input>',
     link: function(scope, button, attributes) {
@@ -92,7 +93,7 @@ myApp.directive('playPause', function() {
   }
 });
 
-myApp.directive('rewind', function() {
+miaListen.directive('rewind', function() {
   return {
     template: '<input type="button" value="◂" id="rewind"></input>',
     link: function(scope, button, attributes) {
@@ -103,7 +104,7 @@ myApp.directive('rewind', function() {
   }
 })
 
-myApp.directive('polarize', function($location) {
+miaListen.directive('polarize', function($location) {
   return function(scope) {
     window.polarizeScope = scope
     scope.$watch('tracks', function(tracks) {
@@ -247,10 +248,10 @@ myApp.directive('polarize', function($location) {
 })
 
 },{}],4:[function(require,module,exports){
-var myApp = angular.module('myApp.factories', []),
+var miaListen = angular.module('miaListen.factories', []),
     BufferLoader = require('../lib/buffer-loader')
 
-myApp.factory('AudioSources', function($q, $timeout, $http) {
+miaListen.factory('AudioSources', function($q, $timeout, $http) {
   try {
     window.AudioContext = window.AudioContext||window.webkitAudioContext;
     var context = new AudioContext();

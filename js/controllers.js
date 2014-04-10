@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.controllers', [])
+angular.module('miaListen.controllers', [])
 
 .controller('homeCtrl', ['$scope', 'objects', function($scope, objects) {
     $scope.objects = objects
