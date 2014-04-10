@@ -75,6 +75,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
       sources[i] = source;
       source.loop = true
     }
+    sources.splice(buffers.length, sources.length-buffers.length)
 
     onEachSource(function(source) {
       source.start(0, playTime);
