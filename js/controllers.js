@@ -13,6 +13,7 @@ angular.module('myApp.controllers', [])
   $scope.audioSources.load(key).then(function(x) {
     $scope.object = x
     $scope.tracks = x.titles
+    $scope.audioSources.play()
   });
   // ^^^ this .then thing above is not idiomatic; something about an array
   // of audio buffers messes up directly binding to the view

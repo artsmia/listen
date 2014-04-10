@@ -4,6 +4,9 @@ myApp.directive('playPause', function() {
   return {
     template: '<input type="button" value="▸" id="play-pause"></input>',
     link: function(scope, button, attributes) {
+      if(scope.audioSources.playing()) {
+        button.val("||")
+      }
       button.bind("click", function() {
         if (button.val() == "▸") {
           button.val("❙❙");

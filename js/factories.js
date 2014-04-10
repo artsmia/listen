@@ -163,6 +163,7 @@ myApp.factory('AudioSources', function($q, $timeout, $http) {
     setGain: setGain,
     dampGain: dampGain,
     time: time,
-    duration: duration
+    duration: duration,
+    playing: function() { return playing }
   };
 })
