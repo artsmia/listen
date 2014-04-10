@@ -31,3 +31,7 @@ myApp.config(function($routeProvider) {
       reloadOnSearch: false
     })
 })
+
+require('./factories')
+require('./directives')
+require('./controllers')

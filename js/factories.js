@@ -1,4 +1,5 @@
-var myApp = angular.module('myApp.factories', []);
+var myApp = angular.module('myApp.factories', []),
+    BufferLoader = require('../lib/buffer-loader')
 
 myApp.factory('AudioSources', function($q, $timeout, $http) {
   try {
