@@ -117,9 +117,10 @@ miaListen.directive('polarize', function($location) {
         r = Math.min(w, h) / numRings * 4.5,
         s = .09
 
-      var volume = d3.scale.linear().domain([0, 1]).clamp(true)
+      var pad = 0.02
+      var volume = d3.scale.linear().domain([0+pad, 1-pad]).clamp(true)
       var rings = d3.scale.linear()
-          .domain([0, w])
+          .domain([0+pad*10, w-pad*10])
           .rangeRound([0, numRings-1])
           .clamp(true)
       var inputVolume = d3.scale.linear()
@@ -130,7 +131,7 @@ miaListen.directive('polarize', function($location) {
       var drag = d3.behavior.drag().on("drag", function(d,i) {
         var index = rings(d3.event.x),
             input = d3.selectAll('.gain input')[0][index],
-            newValue = fields[index].value = volume(d3.event.y/h*1.1),
+            newValue = fields[index].value = volume(d3.event.y/h),
             _volume = inputVolume(newValue)
 
         update(fields)
