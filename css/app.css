@@ -54,24 +54,32 @@ header h3 {
   #objects {
     -webkit-column-count: 2;
     -webkit-column-width: 50%;
+    -moz-column-count: 2;
+    -moz-column-width: 50%;
   }
 }
 @media (min-width: 45em) {
   #objects {
     -webkit-column-count: 3;
     -webkit-column-width: 33%;
+    -moz-column-count: 3;
+    -moz-column-width: 33%;
   }
 }
 @media (min-width: 57em) {
   #objects {
     -webkit-column-count: 4;
     -webkit-column-width: 25%;
+    -moz-column-count: 4;
+    -moz-column-width: 25%;
   }
 }
 @media (min-width: 69em) {
   #objects {
     -webkit-column-count: 5;
     -webkit-column-width: 20%;
+    -moz-column-count: 5;
+    -moz-column-width: 20%;
   }
 }
 
