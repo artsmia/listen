@@ -189,7 +189,7 @@ miaListen.directive('polarize', function($location) {
         .innerRadius(function(d) { return d.index * r; })
         .outerRadius(function(d) { return (d.index + s) * r; });
 
-      d3.select("body")
+      d3.select("#mixer")
           .call(drag)
       var svg = d3.select("section").append("svg")
           .attr("width", w)
@@ -246,9 +246,12 @@ miaListen.directive('polarize', function($location) {
           update(fields)
         }
       });
+
+      // Prevent touch scrolling on object pages but not the index
       document.ontouchmove = function(event){
-        event.preventDefault();
+        if(event.target == document.querySelector('#mixer') || event.target.nodeName == 'SVG') event.preventDefault();
       }
+
       window.onresize = function() {
         d3.selectAll('svg').data([]).exit().remove()
         polarize()
