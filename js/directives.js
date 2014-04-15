@@ -153,7 +153,7 @@ miaListen.directive('polarize', function($location) {
       function loadMix() {
         fields.map(function(field, index) {
           var mix = scope.loadMix && scope.loadMix[index] && parseInt(scope.loadMix[index])/100
-          if(mix && mix >=0) field.value = mix
+          if(mix >= 0) field.value = mix
         })
       }
 
