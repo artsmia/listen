@@ -1,6 +1,6 @@
 # Listen!
 
-*Listen!* is a sound sequencer application that allows users to remix
+*Listen!* is a sound remixing application that allows users to remix
 recorded music and sound interpretations, recorded by Minnesota
 musicians, of 21 objects in the MIA's collection.
 
