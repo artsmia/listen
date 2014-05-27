@@ -194,6 +194,7 @@ miaListen.directive('polarize', function($location) {
       var svg = d3.select("section").append("svg")
           .attr("width", w)
           .attr("height", h)
+      var _gutters = svg.append("g").attr('id', 'gutters')
       var _arcs = svg.append("g")
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
@@ -225,7 +226,37 @@ miaListen.directive('polarize', function($location) {
           .attr("text-anchor", "middle")
           .text(function(d, i) { return scope.tracks[i] });
 
+      // sleuth where `rings()`—a d3.linear().rangeRound() scale—changes
+      var computeGutters = function() {
+        var t1 = new Date()
+        var gutter = 0, gutters = [0]
+        for(var x = 0; x <= w; x++) {
+          var _gutter = rings(x)
+          if(_gutter > gutter) { gutter = _gutter; gutters.push(x) }
+        }
+        return gutters
+      }
+
+      var drawGutters = function() {
+        var gutters = _gutters.selectAll("rect.gutter")
+            .data(computeGutters())
+        gutters.enter().append('rect')
+            .attr('class', 'gutter')
+            .attr('x', function(d, i) { return d })
+            .attr('width', function(d, i) {
+              // the difference between this x and the next gutter's x. Last gutter goes until w (window width)
+              return (gutters.data()[i+1] || w) - d;
+            })
+            .attr('height', h)
+            .attr('fill', function(d, i) {
+              return (i%2 == 0) ? 'rgba(20, 20, 20, 0.2)' : 'rgba(0, 0, 0, 0)' // stripes
+            })
+      }
+      drawGutters()
+
       window.api = {
+        rings: rings,
+        gutters: gutters,
         arcs: arcs,
         update: update,
         fields: fields,
