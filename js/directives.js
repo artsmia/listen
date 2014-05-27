@@ -70,7 +70,7 @@ miaListen.directive('polarize', function($location) {
 
         var activeArc = d3.select('path.arc:nth-child(' + (index+1) + ')'),
           arcPoint = arc.centroid(activeArc.datum()),
-          lineAttrs = 'm' + arcPoint[0] + ',' + arcPoint[1] + 'L' + (d3.event.x-w/2) + ',' + (d3.event.y-h/2),
+          lineAttrs = 'm' + (arcPoint[0]+w/2) + ',' + (arcPoint[1]+h/2) + 'L' + (d3.event.x) + ',' + (d3.event.y),
           arcFill = d3.rgb(activeArc.style('fill'))
         d3.selectAll('path.line').remove()
         d3.selectAll('path.dragging').classed('dragging', false)
@@ -112,7 +112,7 @@ miaListen.directive('polarize', function($location) {
       var svg = d3.select("section").append("svg")
           .attr("width", w)
           .attr("height", h)
-        .append("g")
+      var _arcs = svg.append("g")
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
@@ -122,7 +122,7 @@ miaListen.directive('polarize', function($location) {
       loadMix()
 
       function update(data) {
-        var arcs = svg.selectAll("path.arc")
+        var arcs = _arcs.selectAll("path.arc")
             .data(data, function(d) { return d.index; })
 
         arcs.enter().append("path")
