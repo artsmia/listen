@@ -54,8 +54,7 @@ angular.module('miaListen.controllers', [])
   $scope.loadMix = mix && mix.split(',')
 
   $scope.audioSources.load(key).then(function(x) {
-    $scope.object = x
-    $scope.tracks = x.titles
+    $scope.loaded = true
 
     // The audio should start as soon as it loads.
     // iOS doesn't play media without user interaction. So use the first touch to play.
@@ -66,6 +65,11 @@ angular.module('miaListen.controllers', [])
       $scope.audioSources.play()
     }
     window.addEventListener('touchstart', touchstartplay)
+  },
+  function(error) { console.log('error', error) },
+  function(notify) {
+    $scope.object = notify.object
+    $scope.tracks = notify.tracks
   });
   // ^^^ this .then thing above is not idiomatic; something about an array
   // of audio buffers messes up directly binding to the view
@@ -317,8 +321,15 @@ miaListen.factory('AudioSources', function($q, $timeout, $http) {
       var audioURLs = new Array(),
         tracks = data[key].tracks,
         titles = [], // reset from previous player
-        _duration = 0
+        _duration = 0,
+        meta = {
+          id: data[key].id,
+          colors: data[key].colors,
+          titles: titles,
+          title: data[key].title
+        }
 
+      $timeout(function() { deferred.notify({object: meta, tracks: meta.titles}) })
 
       for (var i = 0, length = tracks.length; i < length; i++) {
         audioURLs.push("http://cdn.dx.artsmia.org/listen/" + key + "/" + tracks[i].file);
@@ -331,12 +342,7 @@ miaListen.factory('AudioSources', function($q, $timeout, $http) {
         function(loadedBuffers) {
           buffers = loadedBuffers;
           _duration = buffers[0].duration;
-          deferred.resolve({
-            id: data[key].id,
-            colors: data[key].colors,
-            titles: titles,
-            title: data[key].title
-          });
+          deferred.resolve();
         }
       );
 

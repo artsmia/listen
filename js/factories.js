@@ -23,8 +23,15 @@ miaListen.factory('AudioSources', function($q, $timeout, $http) {
       var audioURLs = new Array(),
         tracks = data[key].tracks,
         titles = [], // reset from previous player
-        _duration = 0
+        _duration = 0,
+        meta = {
+          id: data[key].id,
+          colors: data[key].colors,
+          titles: titles,
+          title: data[key].title
+        }
 
+      $timeout(function() { deferred.notify({object: meta, tracks: meta.titles}) })
 
       for (var i = 0, length = tracks.length; i < length; i++) {
         audioURLs.push("http://cdn.dx.artsmia.org/listen/" + key + "/" + tracks[i].file);
@@ -37,12 +44,7 @@ miaListen.factory('AudioSources', function($q, $timeout, $http) {
         function(loadedBuffers) {
           buffers = loadedBuffers;
           _duration = buffers[0].duration;
-          deferred.resolve({
-            id: data[key].id,
-            colors: data[key].colors,
-            titles: titles,
-            title: data[key].title
-          });
+          deferred.resolve();
         }
       );
 

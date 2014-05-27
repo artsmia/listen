@@ -14,8 +14,7 @@ angular.module('miaListen.controllers', [])
   $scope.loadMix = mix && mix.split(',')
 
   $scope.audioSources.load(key).then(function(x) {
-    $scope.object = x
-    $scope.tracks = x.titles
+    $scope.loaded = true
 
     // The audio should start as soon as it loads.
     // iOS doesn't play media without user interaction. So use the first touch to play.
@@ -26,6 +25,11 @@ angular.module('miaListen.controllers', [])
       $scope.audioSources.play()
     }
     window.addEventListener('touchstart', touchstartplay)
+  },
+  function(error) { console.log('error', error) },
+  function(notify) {
+    $scope.object = notify.object
+    $scope.tracks = notify.tracks
   });
   // ^^^ this .then thing above is not idiomatic; something about an array
   // of audio buffers messes up directly binding to the view
