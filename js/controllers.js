@@ -41,4 +41,10 @@ angular.module('miaListen.controllers', [])
 
     $location.search('mix', mix)
   }
+
+  $scope.toggleHeader = function(e) {
+    $scope.expandHeader = !$scope.expandHeader
+    e && e.stopPropagation()
+    $scope.$$phase || $scope.$apply()
+  }
 }]);

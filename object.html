@@ -1,14 +1,27 @@
-<section polarize id="mixer">
+<section polarize id="mixer" ng-class="{loading: !loaded}">
+  <header ng-class="{expanded: !loaded || expandHeader}" ng-click="!expandHeader && toggleHeader()">
+    <figure class="lone">
+      <a href="//collections.artsmia.org/index.php?page=detail&id={{object.id}}">
+        <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
+      </a>
+    </figure>
+
+    <div id="controls">
+      <input type="button" value="▸" id="play-pause" play-pause></input>
+      <h2 ng-bind="object.title"></h2>
+    </div>
+    <a ng-click="toggleHeader($event)" id="collapse">X</a>
+    <div id="save-back">
+      <a ng-click="saveMix()">Save</a>
+      <a href="#">Home</a>
+    </div>
+  </header>
+
   <div ng-if="! loaded" id="loading">
     Loading...
   </div>
 
   <div ng-if="tracks" id="mixer">
-    <input type="button" value="◂" id="rewind" rewind></input>
-    <input type="button" value="▸" id="play-pause" play-pause></input>
-
-    <progress value="{{ audioSources.time()%audioSources.duration() }}" max="{{ audioSources.duration() }}"></progress>
-
     <br clear="both">
 
     <div ng-repeat="track in tracks" class="board" style="display: none">
@@ -20,13 +33,4 @@
       </div>
     </div>
   </div>
-
-  <figure class="lone">
-    <a href="//collections.artsmia.org/index.php?page=detail&id={{object.id}}">
-      <img ng-show="object.id" ng-src="http://api.artsmia.org/images/{{object.id}}/300/small.jpg">
-      <figcaption class="show" ng-bind="object.title"></figcaption>
-    </a>
-  </figure>
-  <a href="#">Back</a>
-  <a ng-click="saveMix()">Save Mix</a>
 </section>
