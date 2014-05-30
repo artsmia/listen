@@ -142,7 +142,7 @@ miaListen.directive('polarize', function($location) {
         s = .09
 
       var pad = 0.02
-      var volume = d3.scale.linear().domain([0+pad, 1-pad]).clamp(true)
+      var volume = d3.scale.linear().domain([1-pad, 0+pad]).clamp(true)
       var rings = d3.scale.linear()
           .domain([0+pad*10, w-pad*10])
           .rangeRound([0, numRings-1])
