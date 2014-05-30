@@ -7,14 +7,14 @@
     </figure>
 
     <div id="play-title">
-      <input type="button" value="▸" id="play-pause" play-pause></input>
+      <span id="play-pause" play-pause></span>
       <h2 ng-bind="object.title"></h2>
     </div>
     <a class="fitts" ng-click="toggleHeader($event)" id="collapse">X</a>
     <div id="controls">
       <a ng-click="saveMix()">Save</a>
       <a href="#">Home</a>
-      <a ng-if="!expandHelp" ng-click="toggleHelp()">Help</a>
+      <a ng-class="{open: expandHelp}" class="help" ng-click="toggleHelp()">Help</a>
     </div>
   </header>
 

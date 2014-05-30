@@ -99,18 +99,18 @@ var miaListen = angular.module('miaListen.directives', []);
 
 miaListen.directive('playPause', function() {
   return {
-    template: '<input type="button" value="▸" id="play-pause"></input>',
-    link: function(scope, button, attributes) {
+    template: '❙❙',
+    link: function(scope, elem, attributes) {
       if(scope.audioSources.playing()) {
-        button.val("||")
+        elem.innerHTML = "❙❙"
       }
-      button.bind("click", function() {
-        if (button.val() == "▸") {
-          button.val("❙❙");
+      elem.bind("click", function() {
+        if (!scope.audioSources.playing()) {
           scope.audioSources.play();
+          elem[0].innerHTML = "❙❙";
         } else {
-          button.val("▸");
           scope.audioSources.pause();
+          elem[0].innerHTML = "▸";
         }
       });
     }

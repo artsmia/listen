@@ -146,13 +146,15 @@ section#mixer { border: none; }
   transition: 0.1s height ease-in;
   border: 2px solid black;
   border-width: 2px 0 2px 0;
+  padding: 0.25em 1em;
 }
-#mixer header figure, #mixer header #controls {
- display: none;
-}
-
 #mixer header.expanded {
   height: 11em;
+  padding: 0;
+}
+
+#mixer header figure, #mixer header #controls {
+ display: none;
 }
 #mixer header.expanded figure, #mixer header.expanded #controls {
   display: block;
@@ -163,20 +165,16 @@ header figure {
   margin-left: -0.5em;
 }
 header figure img {
-  max-height: 11em;
+  max-height: 10.7em;
 }
 #mixer header.expanded #play-title {
   float: left;
   margin: 7em 0 0 1em;
 }
-#mixer header input {
-  font-size: 2em;
-  -webkit-transform: translateY(-3.5px);
-  -moz-transform: translateY(-3.5px);
-}
-#mixer header.expanded input {
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
+#mixer #play-pause {
+  border: 2px solid black;
+  padding: 0 0.4em;
+  font-size: 1.3em;
 }
 #mixer header h2 {
   color: black;
@@ -192,7 +190,7 @@ header figure img {
 }
 #mixer #controls {
   float: right;
-  margin: 1em -1em 0 0;
+  margin-top: 1em;
 }
 #mixer #controls a {
   color: black;
@@ -207,7 +205,9 @@ header figure img {
 #mixer header.expanded a#collapse {
   display: block;
   float: right;
-  margin-top: 6em;
+  position: relative;
+  top: 9em;
+  right: 1em;
 }
 a.fitts {
   margin: -3em -3em -3em -3em;
@@ -247,3 +247,7 @@ a.fitts {
   right: 1em;
 }
 
+a.help.open {
+  background: black;
+  color: white !important;
+}
