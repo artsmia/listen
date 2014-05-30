@@ -118,7 +118,7 @@ miaListen.directive('polarize', function($location) {
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
-      var fields = d3.range(0, numRings, 1).map(function(val, index) {
+      var fields = window.fields = window.fields || d3.range(0, numRings, 1).map(function(val, index) {
         return {value: (val+1)/10, index: (index+1)/10}
       });
       loadMix()
