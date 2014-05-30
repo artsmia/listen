@@ -87,6 +87,11 @@ angular.module('miaListen.controllers', [])
     e && e.stopPropagation()
     $scope.$$phase || $scope.$apply()
   }
+  $scope.toggleHelp = function(e) {
+    $scope.expandHelp = !$scope.expandHelp
+    e && e.stopPropagation()
+    $scope.$$phase || $scope.$apply()
+  }
 }]);
 
 },{}],3:[function(require,module,exports){

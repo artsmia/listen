@@ -6,14 +6,15 @@
       </a>
     </figure>
 
-    <div id="controls">
+    <div id="play-title">
       <input type="button" value="▸" id="play-pause" play-pause></input>
       <h2 ng-bind="object.title"></h2>
     </div>
-    <a ng-click="toggleHeader($event)" id="collapse">X</a>
-    <div id="save-back">
+    <a class="fitts" ng-click="toggleHeader($event)" id="collapse">X</a>
+    <div id="controls">
       <a ng-click="saveMix()">Save</a>
       <a href="#">Home</a>
+      <a ng-if="!expandHelp" ng-click="toggleHelp()">Help</a>
     </div>
   </header>
 
@@ -33,4 +34,19 @@
       </div>
     </div>
   </div>
+  <aside id="help" ng-class="{expanded: expandHelp}">
+    <p>
+      <img src="/img/rings.svg">
+      Each ring represents one track
+    </p>
+    <p>
+      <img src="/img/horizontal.svg">
+      Select the track you want to adjust by moving horizontally. Use the vertical stripes in the background to guide you
+    </p>
+    <p>
+      <img src="/img/vertical.svg">
+      Adjust the volume of that track by staying put horizontally and moving your finger vertically
+    </p>
+    <a class="fitts" ng-click="toggleHelp()">X</a>
+  </aside>
 </section>
