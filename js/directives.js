@@ -1,16 +1,17 @@
 var miaListen = angular.module('miaListen.directives', []);
 
 miaListen.directive('playPause', function() {
+  var pause = 'Ⅱ'
   return {
-    template: '❙❙',
+    template: pause,
     link: function(scope, elem, attributes) {
       if(scope.audioSources.playing()) {
-        elem.innerHTML = "❙❙"
+        elem.innerHTML = pause
       }
       elem.bind("click", function() {
         if (!scope.audioSources.playing()) {
           scope.audioSources.play();
-          elem[0].innerHTML = "❙❙";
+          elem[0].innerHTML = pause;
         } else {
           scope.audioSources.pause();
           elem[0].innerHTML = "▸";
