@@ -233,6 +233,7 @@ a.fitts {
   width: 33%;
   float: left;
   padding: 1em;
+  text-align: center;
 }
 
 #help p img {
