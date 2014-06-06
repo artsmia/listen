@@ -135,7 +135,7 @@ miaListen.directive('polarize', function($location) {
     scope.$watch('tracks', function(tracks) {
       if(tracks) polarize()
     })
-    function polarize() {
+    function polarize(maintainFields) {
       var w = window.innerWidth,
         h = window.innerHeight,
         numRings = scope.tracks.length,
@@ -215,7 +215,7 @@ miaListen.directive('polarize', function($location) {
           .attr('id', 'arcs')
           .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
 
-      var fields = window.fields = window.fields || d3.range(0, numRings, 1).map(function(val, index) {
+      var fields = maintainFields || d3.range(0, numRings, 1).map(function(val, index) {
         return {value: (val+1)/10, index: (index+1)/10}
       });
       loadMix()
@@ -301,7 +301,7 @@ miaListen.directive('polarize', function($location) {
 
       window.onresize = function() {
         d3.selectAll('svg').data([]).exit().remove()
-        polarize()
+        polarize(fields)
       }
     }
   }
